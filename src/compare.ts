@@ -196,6 +196,8 @@ const PROJECT_METRICS: [string, string][] = [
   ['projectsAdopted', 'Projects adopted'],
   ['projectPlacements', 'Project placements'],
   ['completedCarryChains', 'Completed carry chains'],
+  ['netDeliveries', 'Net deliveries'],
+  ['replacements', 'Replacements'],
 ];
 
 /** Same-runtime HF5 comparison set; no historical files are substituted for missing controls. */
@@ -251,20 +253,32 @@ export async function compareHF5(directory = 'viewer/runs/hf5-candidate'): Promi
   ]);
   const fields: [string, string][] = [
     ['freeSpireObjects', 'Free Spire objects'],
+    ['finalFreeSpireObjects', 'Final free Spire objects'],
     ...PROJECT_METRICS,
     ['taskScore', 'Task cubes'],
   ];
   rows.push(
     '',
-    'Per-seed values. All project measures use free time only. Project placements require a successful place at the pre-action active project destination. Completed carry chains require pick then place of the same object within one episode without an intervening throw or loss. No movement minimum; replacing the same object counts again.',
+    'Per-seed values. All project measures use free time only. Project placements require a successful place at the pre-action active project destination. Completed carry chains require pick then place of the same object within one episode without an intervening throw or loss. No movement minimum; replacing the same object counts again. Net deliveries and replacements classify the preceding successful pick by its recorded source relative to the active destination at placement; unknown pick sources are excluded. Final free Spire objects is the maximum endpoint pile across free episodes, alongside the maximum in any free frame.',
     '',
     `| Arm | Seed | ${fields.map(([, label]) => label).join(' | ')} |`,
-    '|---|---:|---:|---:|---:|---:|---:|',
+    `|---|---:|${fields.map(() => '---:|').join('')}`,
   );
   for (const arm of HF5_ARMS)
     for (let seed = 1; seed <= 10; seed++)
       rows.push(`| ${arm} | ${seed} | ${fields.map(([key]) => values(arm, key)[seed - 1]).join(' | ')} |`);
-  const medians: [string, string][] = [...FREE_METRICS, ...PROJECT_METRICS, ['taskScore', 'Task cubes']];
+  const medians: [string, string][] = [
+    ...FREE_METRICS.flatMap(([key, label]): [string, string][] =>
+      key === 'freeSpireObjects'
+        ? [
+            [key, label],
+            ['finalFreeSpireObjects', 'Final free Spire objects'],
+          ]
+        : [[key, label]],
+    ),
+    ...PROJECT_METRICS,
+    ['taskScore', 'Task cubes'],
+  ];
   rows.push(
     '',
     'Medians (project metrics descriptive only).',

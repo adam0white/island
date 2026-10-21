@@ -36,7 +36,7 @@ describe('Holm adjustment', () => {
 
 describe('comparison report', () => {
   it('keeps HF5 project metrics descriptive and HF5 versus HF4 in one two-test family', async () => {
-    const scratch = '/Users/abdul/code/.lab-scratch/hf-projects/island';
+    const scratch = '/Users/abdul/code/.lab-scratch/hf-2141/island';
     await mkdir(scratch, { recursive: true });
     const directory = await mkdtemp(resolve(scratch, 'compare5-test-'));
     try {
@@ -87,7 +87,7 @@ describe('comparison report', () => {
       ).toBe(true);
       expect(report).toContain('Project metrics are descriptive only');
       expect(report).toContain(
-        '| Arm | Seed | Free Spire objects | Projects adopted | Project placements | Completed carry chains | Task cubes |',
+        '| Arm | Seed | Free Spire objects | Final free Spire objects | Projects adopted | Project placements | Completed carry chains | Net deliveries | Replacements | Task cubes |',
       );
     } finally {
       await rm(directory, { recursive: true, force: true });

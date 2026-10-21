@@ -38,67 +38,67 @@ Exact unpaired permutation tests of absolute mean differences, including ties. M
 | hf5 vs hf4 | Spire objects | 2.0000 | 0.0000 | 0.000714 | 0.001429 |
 | hf5 vs hf4 | Task score | 1.5000 | 1.0000 | 0.517461 | 0.517461 |
 
-Per-seed values. All project measures use free time only. Project placements require a successful place at the pre-action active project destination. Completed carry chains require pick then place of the same object within one episode without an intervening throw or loss. No movement minimum; replacing the same object counts again.
+Per-seed values. All project measures use free time only. Project placements require a successful place at the pre-action active project destination. Completed carry chains require pick then place of the same object within one episode without an intervening throw or loss. No movement minimum; replacing the same object counts again. Net deliveries and replacements classify the preceding successful pick by its recorded source relative to the active destination at placement; unknown pick sources are excluded. Final free Spire objects is the maximum endpoint pile across free episodes, alongside the maximum in any free frame.
 
-| Arm | Seed | Free Spire objects | Projects adopted | Project placements | Completed carry chains | Task cubes |
-|---|---:|---:|---:|---:|---:|---:|
-| hf5 | 1 | 2 | 1 | 21 | 21 | 2 |
-| hf5 | 2 | 2 | 1 | 27 | 27 | 1 |
-| hf5 | 3 | 2 | 1 | 22 | 22 | 2 |
-| hf5 | 4 | 3 | 1 | 16 | 16 | 3 |
-| hf5 | 5 | 2 | 1 | 34 | 34 | 0 |
-| hf5 | 6 | 0 | 1 | 0 | 0 | 0 |
-| hf5 | 7 | 4 | 1 | 28 | 28 | 0 |
-| hf5 | 8 | 2 | 1 | 23 | 23 | 2 |
-| hf5 | 9 | 0 | 1 | 1 | 1 | 0 |
-| hf5 | 10 | 3 | 1 | 21 | 21 | 3 |
-| hf5-no-projects | 1 | 0 | 0 | 0 | 0 | 1 |
-| hf5-no-projects | 2 | 0 | 0 | 0 | 0 | 1 |
-| hf5-no-projects | 3 | 0 | 0 | 0 | 0 | 2 |
-| hf5-no-projects | 4 | 0 | 0 | 0 | 0 | 0 |
-| hf5-no-projects | 5 | 0 | 0 | 0 | 0 | 0 |
-| hf5-no-projects | 6 | 1 | 0 | 0 | 0 | 1 |
-| hf5-no-projects | 7 | 0 | 0 | 0 | 0 | 1 |
-| hf5-no-projects | 8 | 0 | 0 | 0 | 0 | 1 |
-| hf5-no-projects | 9 | 0 | 0 | 0 | 0 | 1 |
-| hf5-no-projects | 10 | 0 | 0 | 0 | 0 | 0 |
-| hf5-no-persistence | 1 | 1 | 1 | 3 | 3 | 0 |
-| hf5-no-persistence | 2 | 0 | 1 | 0 | 0 | 0 |
-| hf5-no-persistence | 3 | 0 | 1 | 0 | 0 | 0 |
-| hf5-no-persistence | 4 | 1 | 1 | 3 | 3 | 0 |
-| hf5-no-persistence | 5 | 0 | 1 | 0 | 0 | 1 |
-| hf5-no-persistence | 6 | 0 | 1 | 0 | 0 | 1 |
-| hf5-no-persistence | 7 | 0 | 1 | 0 | 0 | 2 |
-| hf5-no-persistence | 8 | 0 | 1 | 0 | 0 | 1 |
-| hf5-no-persistence | 9 | 0 | 1 | 1 | 1 | 1 |
-| hf5-no-persistence | 10 | 0 | 1 | 0 | 0 | 1 |
-| random | 1 | 0 | 0 | 0 | 0 | 0 |
-| random | 2 | 0 | 0 | 0 | 0 | 0 |
-| random | 3 | 0 | 0 | 0 | 0 | 0 |
-| random | 4 | 0 | 0 | 0 | 0 | 0 |
-| random | 5 | 0 | 0 | 0 | 0 | 0 |
-| random | 6 | 0 | 0 | 0 | 0 | 0 |
-| random | 7 | 0 | 0 | 0 | 0 | 0 |
-| random | 8 | 0 | 0 | 0 | 0 | 0 |
-| random | 9 | 0 | 0 | 0 | 0 | 0 |
-| random | 10 | 0 | 0 | 0 | 0 | 0 |
-| hf4 | 1 | 0 | 0 | 0 | 0 | 1 |
-| hf4 | 2 | 0 | 0 | 0 | 0 | 0 |
-| hf4 | 3 | 0 | 0 | 0 | 0 | 2 |
-| hf4 | 4 | 0 | 0 | 0 | 0 | 0 |
-| hf4 | 5 | 0 | 0 | 0 | 0 | 1 |
-| hf4 | 6 | 0 | 0 | 0 | 0 | 0 |
-| hf4 | 7 | 0 | 0 | 0 | 0 | 1 |
-| hf4 | 8 | 0 | 0 | 0 | 0 | 2 |
-| hf4 | 9 | 0 | 0 | 0 | 0 | 1 |
-| hf4 | 10 | 0 | 0 | 0 | 0 | 1 |
+| Arm | Seed | Free Spire objects | Final free Spire objects | Projects adopted | Project placements | Completed carry chains | Net deliveries | Replacements | Task cubes |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| hf5 | 1 | 2 | 1 | 1 | 21 | 21 | 4 | 17 | 2 |
+| hf5 | 2 | 2 | 1 | 1 | 27 | 27 | 3 | 24 | 1 |
+| hf5 | 3 | 2 | 2 | 1 | 22 | 22 | 4 | 18 | 2 |
+| hf5 | 4 | 3 | 2 | 1 | 16 | 16 | 5 | 11 | 3 |
+| hf5 | 5 | 2 | 2 | 1 | 34 | 34 | 5 | 29 | 0 |
+| hf5 | 6 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+| hf5 | 7 | 4 | 3 | 1 | 28 | 28 | 8 | 20 | 0 |
+| hf5 | 8 | 2 | 2 | 1 | 23 | 23 | 4 | 19 | 2 |
+| hf5 | 9 | 0 | 0 | 1 | 1 | 1 | 0 | 1 | 0 |
+| hf5 | 10 | 3 | 3 | 1 | 21 | 21 | 5 | 16 | 3 |
+| hf5-no-projects | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
+| hf5-no-projects | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf5-no-projects | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf5-no-projects | 6 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf5-no-persistence | 1 | 1 | 0 | 1 | 3 | 3 | 1 | 2 | 0 |
+| hf5-no-persistence | 2 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+| hf5-no-persistence | 3 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+| hf5-no-persistence | 4 | 1 | 0 | 1 | 3 | 3 | 1 | 2 | 0 |
+| hf5-no-persistence | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-persistence | 6 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-persistence | 7 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 2 |
+| hf5-no-persistence | 8 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-persistence | 9 | 0 | 0 | 1 | 1 | 1 | 0 | 1 | 1 |
+| hf5-no-persistence | 10 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+| random | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 6 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf4 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf4 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf4 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
+| hf4 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf4 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf4 | 6 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf4 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf4 | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
+| hf4 | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf4 | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 
 Medians (project metrics descriptive only).
 
-| Arm | Cells visited | Kind entropy | Manipulation share | Idle share | Spire objects | Tallest stack | Repeated pursuit | Projects adopted | Project placements | Completed carry chains | Task cubes |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| hf5 | 40.5000 | 1.8104 | 0.2472 | 0.0056 | 2.0000 | 2.0000 | 4.0000 | 1.0000 | 21.5000 | 21.5000 | 1.5000 |
-| hf5-no-projects | 36.0000 | 2.2991 | 0.1500 | 0.1972 | 0.0000 | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 1.0000 |
-| hf5-no-persistence | 29.0000 | 2.2192 | 0.1444 | 0.1806 | 0.0000 | 1.0000 | 0.0000 | 1.0000 | 0.0000 | 0.0000 | 1.0000 |
-| random | 41.5000 | 1.9857 | 0.0389 | 0.2167 | 0.0000 | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
-| hf4 | 29.5000 | 2.2541 | 0.1167 | 0.2278 | 0.0000 | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 1.0000 |
+| Arm | Cells visited | Kind entropy | Manipulation share | Idle share | Spire objects | Final free Spire objects | Tallest stack | Repeated pursuit | Projects adopted | Project placements | Completed carry chains | Net deliveries | Replacements | Task cubes |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| hf5 | 40.5000 | 1.8104 | 0.2472 | 0.0056 | 2.0000 | 2.0000 | 2.0000 | 4.0000 | 1.0000 | 21.5000 | 21.5000 | 4.0000 | 17.5000 | 1.5000 |
+| hf5-no-projects | 36.0000 | 2.2991 | 0.1500 | 0.1972 | 0.0000 | 0.0000 | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 1.0000 |
+| hf5-no-persistence | 29.0000 | 2.2192 | 0.1444 | 0.1806 | 0.0000 | 0.0000 | 1.0000 | 0.0000 | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 1.0000 |
+| random | 41.5000 | 1.9857 | 0.0389 | 0.2167 | 0.0000 | 0.0000 | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+| hf4 | 29.5000 | 2.2541 | 0.1167 | 0.2278 | 0.0000 | 0.0000 | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 1.0000 |

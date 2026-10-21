@@ -22,7 +22,7 @@ Candidate limits: installed package version and `ENGINE_VERSION` both report **2
 
 Other limits remain from HF4: Manhattan travel estimates ignore terrain, carry successors summarize several actions, finite retained claims may omit chains, and route valuation executes nothing. Persistence biases choices but does not execute a plan. Projects survive episode resets with Person memory and may compete with the stated task. The inherited task goal counts repeated placements and does not subtract a cube picked back up; an achieved goal flag is not proof of delivered distinct cubes. Project ratios also depend on incomplete/stale knowledge. We did not tune thresholds, persona, effort, temperature, rewards or task links after seeing results. Ten seeds, one persona and this adapter bound the conclusions.
 
-Verification: `npm run check` passes 126 tests (Biome, TypeScript, Vitest). Focused tests cover task-free prospect inputs with a throwing `task` getter, omission of unseen progress, exact faculty enablement, placement-only links, preserved task action/importance/time course, all known material IDs, measures and comparison-family structure, and nested viewer audits. All 50 new recordings pass physical replay against the world engine and viewer validation. HF5 seeds 1–3 each match two independent reruns and the saved recording by SHA-256. All 144 previously tracked files under viewer/runs (143 recordings plus the index) retain their committed bytes. package.json and package-lock.json retain committed bytes. The audit with hashes and per-run readout counts is [viewer/audits/hf5-candidate.json](viewer/audits/hf5-candidate.json). Two independent subagent reviews checked adapter boundaries and proof/measure semantics; the task-link assertion and batch-wide viewer/replay proof gaps were fixed. The material-ID rejection is reported above as a framework limit rather than hidden with adapter tuning. No credentials, LLM arms, external review CLIs or remote actions were used.
+Verification: `npm run check` passes 126 tests (Biome, TypeScript, Vitest). Focused tests cover task-free prospect inputs with a throwing `task` getter, omission of unseen progress, exact faculty enablement, placement-only links, preserved task action/importance/time course, all known material IDs, measures and comparison-family structure, and nested viewer audits. Verification: `npm run check` passes Biome, TypeScript and 130 tests. All 50 new recordings pass physical replay against the world engine and viewer validation. HF5 seeds 1–3 each match two independent reruns and the saved recording by SHA-256. All 144 previously tracked files under viewer/runs (143 recordings plus the index) retain their committed bytes. package.json and package-lock.json retain committed bytes. The audit with hashes and per-run readout counts is [viewer/audits/hf5-candidate.json](viewer/audits/hf5-candidate.json). Two independent subagent reviews checked adapter boundaries and proof/measure semantics; the task-link assertion and batch-wide viewer/replay proof gaps were fixed. The material-ID rejection is reported above as a framework limit rather than hidden with adapter tuning. No credentials, LLM arms, external review CLIs or remote actions were used.
 
 Reproduce after installing a candidate with `npm install --no-save --package-lock=false <tarball-or-spec>`: run **`node src/generate5.ts <empty-output-directory>`**. The default is viewer/runs/hf5-candidate; it refuses a nonempty directory, protecting existing recordings. For the lead's published rerun use `node src/generate5.ts viewer/runs/hf5-2.14.0`. The command runs all five arms, prints installed package version and runtime engine, saves the recordings/index/runtime receipt, and prints and saves every table below. `node src/compare.ts viewer/runs/hf5-candidate` regenerates the comparison text. A single arm is available through `node src/run.ts --mind hf5 --seed 1 --out <scratch-path>`, with either ablation name supported. Determinism/replay script: /Users/abdul/code/.lab-scratch/hf-projects/island/audit5.ts. Scratch log: /Users/abdul/code/.lab-scratch/hf-projects/island.log. The requested scratch report is /Users/abdul/code/.lab-scratch/hf-projects/island-report.md.
 
@@ -132,3 +132,157 @@ Medians (project metrics descriptive only).
 | hf5-no-persistence | 29.0000 | 2.2192 | 0.1444 | 0.1806 | 0.0000 | 1.0000 | 0.0000 | 1.0000 | 0.0000 | 0.0000 | 1.0000 |
 | random | 41.5000 | 1.9857 | 0.0389 | 0.2167 | 0.0000 | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
 | hf4 | 29.5000 | 2.2541 | 0.1167 | 0.2278 | 0.0000 | 1.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 1.0000 |
+
+
+## Published 2.14.1 rerun
+
+Done means the published five-arm, ten-seed rerun, the measures and comparisons below, physical replay and viewer validation, passing checks, and a signed commit pushed to origin/hf5. The requester accepts the evidence. This supersedes the candidate-only no-push boundary above.
+
+Runtime receipt: installed package **2.14.1**, engine **2.14.1**. Installed with `npm install --no-save --package-lock=false @adam0white/human-framework@2.14.1`; the committed package pin and lockfile retain their bytes. The adapter, persona, thresholds, temperature, rewards and task links are unchanged. All five arms ran seeds 1–10. No LLM arms or spend.
+
+**Are free-time piles now made of real progress? Some deliveries occur, but replacement activity still dominates the placement counts.** Across HF5 seeds, 84 completed chains comprise 15 net deliveries and 69 replacements. The medians are 11 chains, 2 deliveries and 8.5 replacements. The maximum-in-any-frame Spire pile has median 2, but the maximum episode-end pile has median 0.5 (five seeds retain a positive endpoint pile). Compared with 2.14.0, median chains fall from 21.5 to 11, net deliveries from 4 to 2, replacements from 17.5 to 8.5, and the final free pile from 2 to 0.5. The five-measure cross-version Holm family does not establish a difference at .05 (chains, deliveries and replacements each adjusted p .083678). Thus the observed change is less repetitive placement alongside less delivery and retention, not demonstrated conversion into sustained building. A delivery is a placement event after a pick elsewhere, not a distinct object or a guarantee that it remains. Endpoint piles use a maximum across episodes, not the sum or only the last episode. Pile counts include all objects at the Spire; project chains may target the ring.
+
+**Does the carry task improve? No demonstrated improvement.** HF5 task cubes by seed are **1, 1, 0, 3, 2, 0, 0, 0, 0, 3** (median 0.5), versus median 1.5 for 2.14.0 HF5 and 1 for same-runtime HF4. Task Holm p is .717205 versus prior HF5 and 1 versus HF4 in the new five-measure families. No run collects all ten initial cubes. These results neither establish improvement nor prove equivalence or degradation.
+
+The new measures use only free-time frames. Successful project placements are classified using the same carried object’s preceding successful pick location, compared with the active project place at placement. Throw, loss and episode reset invalidate the chain. Adjacent picks use the object location, not the actor location. A first-frame pick with no recorded source is unclassified; in all 100 old/new recordings, chains equal deliveries plus replacements, so no classified chain is missing provenance. The final free pile is the number of Spire objects at each free episode’s final frame, maximized across episodes. The old maximum-in-any-frame measure stays beside it. Recordings from 2.14.0 were not rewritten. Its regenerated comparison preserves all existing inferential rows and all prior values; only new descriptive fields and their definitions were added.
+
+Frame checks: all HF5 runs adopt a project, but seeds 6 and 8 have no project placement; seed 9 has only one replacement. Seed 6 and 9 snapshots show a ring project at progress 0, early pursuit, then null pursuit at episode 1 step 30 and episode 2 step 59. Seed 1 episode 0 step 2 has pursuit strength .32228 and pursuit term +.251; later snapshots show switch penalties -.0612 and -.0078 while project progress reads 0. These are observed pre-action audits, not proof of why a choice occurred or a test of the framework’s internal high-water/decay implementation. Raw representative snapshots and all-run replay receipts are in [the audit](viewer/audits/hf5-2.14.1.json).
+
+Verification: `npm run check` passes Biome, TypeScript and 130 tests. All 50 new recordings pass physical replay against the world engine and viewer validation. Prior tracked recordings and both manifests retain committed bytes. The focused tests cover pick-source classification, retained endpoint piles and the five-outcome Holm family. Limits: ten seeds, one persona, one adapter; exploratory unpaired permutation tests even though terrain is seed matched; separate families are not jointly corrected. Random and HF4 have no active projects, so their project deliveries, replacements and chains are zero by definition; those contrasts do not show absence of physical transport in the controls. No ruh measure is used.
+
+Reproduce the added comparison with `node src/compare5-rerun.ts`. Same-runtime legacy families remain unchanged; the additional comparisons below use one five-test family per contrast.
+
+Exact unpaired permutation tests of absolute mean differences, inclusive ties; medians describe samples. Each contrast is a separate five-test Holm family (free Spire objects, net deliveries, replacements, completed chains, task cubes). Families are exploratory and not jointly corrected. Seeds share terrain, but these tests are unpaired as in the existing machinery. Random/HF4 have no active-project audit, so their project-delivery/replacement/chain measures are zero by definition; these contrasts cannot establish less physical transport by controls. Large p values do not establish equivalence.
+
+| Comparison | Measure | Median A | Median B | Exact p | Holm p |
+|---|---|---:|---:|---:|---:|
+| hf5 2.14.1 vs hf5 2.14.0 | Free Spire objects (max any frame) | 2.0000 | 2.0000 | 0.244463 | 0.488926 |
+| hf5 2.14.1 vs hf5 2.14.0 | Net deliveries | 2.0000 | 4.0000 | 0.018966 | 0.083678 |
+| hf5 2.14.1 vs hf5 2.14.0 | Replacements | 8.5000 | 17.5000 | 0.022538 | 0.083678 |
+| hf5 2.14.1 vs hf5 2.14.0 | Completed chains | 11.0000 | 21.5000 | 0.016736 | 0.083678 |
+| hf5 2.14.1 vs hf5 2.14.0 | Task cubes | 0.5000 | 1.5000 | 0.717205 | 0.717205 |
+| hf5 2.14.1 vs random 2.14.1 batch | Free Spire objects (max any frame) | 2.0000 | 0.0000 | 0.003096 | 0.009288 |
+| hf5 2.14.1 vs random 2.14.1 batch | Net deliveries | 2.0000 | 0.0000 | 0.003096 | 0.009288 |
+| hf5 2.14.1 vs random 2.14.1 batch | Replacements | 8.5000 | 0.0000 | 0.000714 | 0.003572 |
+| hf5 2.14.1 vs random 2.14.1 batch | Completed chains | 11.0000 | 0.0000 | 0.000714 | 0.003572 |
+| hf5 2.14.1 vs random 2.14.1 batch | Task cubes | 0.5000 | 0.0000 | 0.032508 | 0.032508 |
+| hf5 2.14.1 vs hf4 2.14.1 | Free Spire objects (max any frame) | 2.0000 | 0.0000 | 0.003096 | 0.009288 |
+| hf5 2.14.1 vs hf4 2.14.1 | Net deliveries | 2.0000 | 0.0000 | 0.003096 | 0.009288 |
+| hf5 2.14.1 vs hf4 2.14.1 | Replacements | 8.5000 | 0.0000 | 0.000714 | 0.003572 |
+| hf5 2.14.1 vs hf4 2.14.1 | Completed chains | 11.0000 | 0.0000 | 0.000714 | 0.003572 |
+| hf5 2.14.1 vs hf4 2.14.1 | Task cubes | 0.5000 | 1.0000 | 1.000000 | 1.000000 |
+
+### Per-seed values, published 2.14.1
+
+ All project measures use free time only. Project placements require a successful place at the pre-action active project destination. Completed carry chains require pick then place of the same object within one episode without an intervening throw or loss. No movement minimum; replacing the same object counts again. Net deliveries and replacements classify the preceding successful pick by its recorded source relative to the active destination at placement; unknown pick sources are excluded. Final free Spire objects is the maximum endpoint pile across free episodes, alongside the maximum in any free frame.
+
+| Arm | Seed | Free Spire objects | Final free Spire objects | Projects adopted | Project placements | Completed carry chains | Net deliveries | Replacements | Task cubes |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| hf5 | 1 | 2 | 1 | 1 | 12 | 12 | 2 | 10 | 1 |
+| hf5 | 2 | 1 | 0 | 1 | 12 | 12 | 1 | 11 | 1 |
+| hf5 | 3 | 2 | 0 | 1 | 19 | 19 | 3 | 16 | 0 |
+| hf5 | 4 | 2 | 2 | 1 | 7 | 7 | 2 | 5 | 3 |
+| hf5 | 5 | 2 | 2 | 1 | 11 | 11 | 2 | 9 | 2 |
+| hf5 | 6 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+| hf5 | 7 | 2 | 2 | 1 | 11 | 11 | 2 | 9 | 0 |
+| hf5 | 8 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+| hf5 | 9 | 0 | 0 | 1 | 1 | 1 | 0 | 1 | 0 |
+| hf5 | 10 | 2 | 2 | 1 | 11 | 11 | 3 | 8 | 3 |
+| hf5-no-projects | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
+| hf5-no-projects | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf5-no-projects | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf5-no-projects | 6 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf5-no-persistence | 1 | 1 | 0 | 1 | 3 | 3 | 1 | 2 | 0 |
+| hf5-no-persistence | 2 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+| hf5-no-persistence | 3 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+| hf5-no-persistence | 4 | 1 | 0 | 1 | 3 | 3 | 1 | 2 | 0 |
+| hf5-no-persistence | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-persistence | 6 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-persistence | 7 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 2 |
+| hf5-no-persistence | 8 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-persistence | 9 | 0 | 0 | 1 | 1 | 1 | 0 | 1 | 1 |
+| hf5-no-persistence | 10 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+| random | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 6 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf4 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf4 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf4 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
+| hf4 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf4 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf4 | 6 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf4 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf4 | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
+| hf4 | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf4 | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+
+
+### Per-seed values, published 2.14.0
+
+ All project measures use free time only. Project placements require a successful place at the pre-action active project destination. Completed carry chains require pick then place of the same object within one episode without an intervening throw or loss. No movement minimum; replacing the same object counts again. Net deliveries and replacements classify the preceding successful pick by its recorded source relative to the active destination at placement; unknown pick sources are excluded. Final free Spire objects is the maximum endpoint pile across free episodes, alongside the maximum in any free frame.
+
+| Arm | Seed | Free Spire objects | Final free Spire objects | Projects adopted | Project placements | Completed carry chains | Net deliveries | Replacements | Task cubes |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| hf5 | 1 | 2 | 1 | 1 | 21 | 21 | 4 | 17 | 2 |
+| hf5 | 2 | 2 | 1 | 1 | 27 | 27 | 3 | 24 | 1 |
+| hf5 | 3 | 2 | 2 | 1 | 22 | 22 | 4 | 18 | 2 |
+| hf5 | 4 | 3 | 2 | 1 | 16 | 16 | 5 | 11 | 3 |
+| hf5 | 5 | 2 | 2 | 1 | 34 | 34 | 5 | 29 | 0 |
+| hf5 | 6 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+| hf5 | 7 | 4 | 3 | 1 | 28 | 28 | 8 | 20 | 0 |
+| hf5 | 8 | 2 | 2 | 1 | 23 | 23 | 4 | 19 | 2 |
+| hf5 | 9 | 0 | 0 | 1 | 1 | 1 | 0 | 1 | 0 |
+| hf5 | 10 | 3 | 3 | 1 | 21 | 21 | 5 | 16 | 3 |
+| hf5-no-projects | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
+| hf5-no-projects | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf5-no-projects | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf5-no-projects | 6 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-projects | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf5-no-persistence | 1 | 1 | 0 | 1 | 3 | 3 | 1 | 2 | 0 |
+| hf5-no-persistence | 2 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+| hf5-no-persistence | 3 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
+| hf5-no-persistence | 4 | 1 | 0 | 1 | 3 | 3 | 1 | 2 | 0 |
+| hf5-no-persistence | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-persistence | 6 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-persistence | 7 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 2 |
+| hf5-no-persistence | 8 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+| hf5-no-persistence | 9 | 0 | 0 | 1 | 1 | 1 | 0 | 1 | 1 |
+| hf5-no-persistence | 10 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+| random | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 6 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| random | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf4 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf4 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf4 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
+| hf4 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf4 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf4 | 6 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| hf4 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf4 | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
+| hf4 | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| hf4 | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |

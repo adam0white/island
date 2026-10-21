@@ -58,6 +58,97 @@ describe('measureRecording', () => {
     });
   });
 
+  it('classifies project placements by the preceding successful pick source, not actor position', () => {
+    const project = {
+      goalId: 'g1',
+      prospectId: 'p1',
+      placeId: 'cell:1,0',
+      progress: 0,
+      status: 'active' as const,
+    };
+    const inner = { activeProject: project };
+    const source = { id: 'cube-1', x: 1, y: 1, level: 0 };
+    const destination = { ...source, x: 2 };
+    const frames = [
+      frame('look', { objects: [source], inner }),
+      frame('pick cube-1', { carrying: 'cube-1', inner }),
+      // A failed pick does not overwrite the successful source.
+      frame('pick cube-2', { carrying: 'cube-1', inner }),
+      frame('place E', { objects: [destination], inner }),
+      // The actor remains outside the destination but can pick from an adjacent cell.
+      frame('pick cube-1', { carrying: 'cube-1', inner }),
+      frame('place E', { objects: [destination], inner }),
+      frame('pick cube-1', { carrying: 'cube-1', inner }),
+      frame('throw E hard', { objects: [source], inner }),
+      frame('pick cube-1', { carrying: 'cube-1', inner }),
+      frame('place E', { objects: [destination], inner }),
+      // Task actions do not contribute.
+      frame('look', { e: 2, objects: [source], inner }),
+      frame('pick cube-1', { e: 2, carrying: 'cube-1', inner }),
+      frame('place E', { e: 2, objects: [destination], inner }),
+    ];
+    expect(measureRecording(recording(frames))).toMatchObject({
+      projectPlacements: 3,
+      completedCarryChains: 3,
+      netDeliveries: 2,
+      replacements: 1,
+    });
+    // A successful first-frame pick is a chain, but its source cannot be recovered from post-action data.
+    expect(measureRecording(recording(frames.slice(1, 4)))).toMatchObject({
+      completedCarryChains: 1,
+      netDeliveries: 0,
+      replacements: 0,
+    });
+  });
+
+  it('classifies against the project active at placement and resets provenance at episode boundaries', () => {
+    const project = {
+      goalId: 'g1',
+      prospectId: 'p1',
+      placeId: 'cell:0,0',
+      progress: 0,
+      status: 'active' as const,
+    };
+    const object = { id: 'cube-1', x: 2, y: 1, level: 0 };
+    const inner = { activeProject: project };
+    expect(
+      measureRecording(
+        recording([
+          frame('look', { objects: [object], inner }),
+          frame('pick cube-1', { carrying: 'cube-1', inner }),
+          frame('place E', {
+            objects: [object],
+            inner: { activeProject: { ...project, placeId: 'cell:1,0' } },
+          }),
+          frame('pick cube-1', { carrying: 'cube-1', inner }),
+          frame('place E', { e: 1, objects: [object], inner }),
+        ]),
+      ),
+    ).toMatchObject({ projectPlacements: 1, completedCarryChains: 1, netDeliveries: 0, replacements: 1 });
+  });
+
+  it('keeps endpoint free piles separate from transient peaks and ignores the task endpoint', () => {
+    const pile = (n: number) =>
+      Array.from({ length: n }, (_, i) => ({
+        id: `cube-${i}`,
+        x: 3,
+        y: 3,
+        level: i,
+      }));
+    expect(
+      measureRecording(
+        recording([
+          frame('look', { s: 0, objects: pile(4) }),
+          frame('pick cube-1', { s: 1, objects: pile(1) }),
+          frame('look', { e: 1, s: 0, objects: pile(2) }),
+          frame('look', { e: 1, s: 1, objects: pile(3) }),
+          frame('look', { e: 2, s: 9, objects: pile(5) }),
+        ]),
+      ),
+    ).toMatchObject({ freeSpireObjects: 4, finalFreeSpireObjects: 3, taskScore: 5 });
+    expect(measureRecording(recording([])).finalFreeSpireObjects).toBe(0);
+  });
+
   it('rejects throws, losses, wrong destinations, missing active audits and cross-reset chains', () => {
     const project = {
       goalId: 'g1',

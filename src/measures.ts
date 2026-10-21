@@ -109,6 +109,14 @@ export function measureRecording(recording: Recording, legacy = false): Record<s
     measures[`boredomMean${episode}`] = aggregate.sum / aggregate.count;
   if (legacy) return measures;
   // Additive metrics. Legacy serialization opts out so committed pilot hashes remain reproducible.
+  // Retained free-time pile: inspect only the last step of each free episode, then take the max.
+  measures.finalFreeSpireObjects = Math.max(
+    0,
+    ...[...episodes.values()].map((frames) => {
+      const endpoint = frames.reduce((last, frame) => (frame.s >= last.s ? frame : last));
+      return spireObjects(endpoint);
+    }),
+  );
   measures.manipulationShare = free.length
     ? free.filter((f) => ['pick', 'place', 'throw'].includes(actionKind(f.action))).length / free.length
     : 0;
@@ -182,6 +190,8 @@ export function measureRecording(recording: Recording, legacy = false): Record<s
   const adoptedProjects = new Set<string>();
   let placements = 0;
   let completedChains = 0;
+  let netDeliveries = 0;
+  let replacements = 0;
   const delta: Record<string, { x: number; y: number }> = {
     N: { x: 0, y: -1 },
     S: { x: 0, y: 1 },
@@ -196,6 +206,7 @@ export function measureRecording(recording: Recording, legacy = false): Record<s
     const origin = { x: first.me.x - (step?.x ?? 0), y: first.me.y - (step?.y ?? 0) };
     let previous: Frame | undefined;
     let picked: string | null = null;
+    let pickSource: { x: number; y: number } | undefined;
     for (const frame of frames) {
       for (const project of frame.inner?.projects ?? []) adoptedProjects.add(project.goalId);
       const [kind, payload] = frame.action.split(' ');
@@ -207,11 +218,25 @@ export function measureRecording(recording: Recording, legacy = false): Record<s
         const y = origin.y + Number(cell[2]);
         if (frame.objects.some((object) => object.id === carried && object.x === x && object.y === y)) {
           placements++;
-          if (picked === carried) completedChains++;
+          if (picked === carried) {
+            completedChains++;
+            // Picks can reach adjacent cells. Use the object's prior location, never the actor's.
+            // A first-frame pick has no recorded source and remains unclassified.
+            if (pickSource) {
+              if (pickSource.x === x && pickSource.y === y) replacements++;
+              else netDeliveries++;
+            }
+          }
         }
       }
-      if (kind === 'throw' || (picked && frame.carrying !== picked)) picked = null;
-      if (kind === 'pick' && payload && frame.carrying === payload && carried !== payload) picked = payload;
+      if (kind === 'throw' || (picked && frame.carrying !== picked)) {
+        picked = null;
+        pickSource = undefined;
+      }
+      if (kind === 'pick' && payload && frame.carrying === payload && carried !== payload) {
+        picked = payload;
+        pickSource = previous?.objects.find((object) => object.id === payload);
+      }
       previous = frame;
     }
   }
@@ -220,5 +245,7 @@ export function measureRecording(recording: Recording, legacy = false): Record<s
   measures.projectsAdopted = adoptedProjects.size;
   measures.projectPlacements = placements;
   measures.completedCarryChains = completedChains;
+  measures.netDeliveries = netDeliveries;
+  measures.replacements = replacements;
   return measures;
 }
