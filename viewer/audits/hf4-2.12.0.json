@@ -1,0 +1,4113 @@
+{
+  "engine": "2.12.0",
+  "packageHashes": {
+    "package.json": "1a19f1b25c05b769e1b8822c9123c798ff53cdca7dd4cab2367e93f71a84c9d5",
+    "package-lock.json": "84f356edb10b3246f78b6bce33f348964508571a7860e5cea35d86f21c699520"
+  },
+  "preservedHashes": {
+    "hf-1.json": "4e4826d03a20956f54b581eedea3777e551c595837867ec67855ab4186af924d",
+    "hf-10.json": "4328f683e4200b43b30bcf7d50eed37167859aac8cfbc583dd4630eab10b3feb",
+    "hf-2.json": "ae7cbc2b8cdd7a7a0b8b3c2077db18fd8845c2eaca16d6cb63ddc59f06578c8c",
+    "hf-3.json": "151a7d3ebed2f0df4991a02171f4e9d0bf65ad6bd4ebc9488d4c866bcff2a1fe",
+    "hf-4.json": "347247830db2c7be492c98343d064325bcd8eade766debbd62bf50a1d70bf346",
+    "hf-5.json": "b58f2393049e4debe1e57992f4c44bef8aae5255383a04698423396e3b9c3d9c",
+    "hf-6.json": "648036519b90b40a37775e2991d6e792aae66caa194edc275da2d9f802e0d2e0",
+    "hf-7.json": "0a08dc3a951fe6e90e178b861e7a5cfc1f246f9f888743054d3485f035f280df",
+    "hf-8.json": "01497ba07eb399998841a94b4e37587b12bb22324650f86c14ab02b50427e3f5",
+    "hf-9.json": "042921cab9df6712a4c50999a3bba57ce22d5ad6c67a17010e41f60944e9fe05",
+    "hf-no-boredom-1.json": "3e083c38d0de1ef76b5acf4fdb548c1ede262eff209536b86d9c5c630dea1b74",
+    "hf-no-boredom-2.json": "3d8916ee06a2bc820fb2c7db8cdc766e928b9e945bd80244adb3c2e3d004883d",
+    "hf-no-boredom-3.json": "00433ea564484a5a860ca1e6b2ded9a39e1568f4c20588b3b17af2c02dc6799e",
+    "hf2-1.json": "f9892d483d31d54a815f8f9a81d27916572f56aae195dcbfb196c7f3c3bd8820",
+    "hf2-10.json": "f27222f2941b881bde29877f86c35e808c73946160613aa099807d623caf80ec",
+    "hf2-2.json": "529bb2dfc22faf683b4b102ea44ff4628379dddc3b947d6a1e689ba2ece7f448",
+    "hf2-3.json": "ec19c2c765cda9e9ab326fc9c32072ce290e2b14f600d3d0eff3abf34713b685",
+    "hf2-4.json": "21df5964671fd8bff76c999882465220b227f252b288e827bf29feedb6776039",
+    "hf2-5.json": "bd220dffa67686108fc58b9375e7e9a339002a8f0fc5ac5fd4b0c6f97443bd3f",
+    "hf2-6.json": "7fec85e8cb88a114d05260233ff7531e568e08b95012d669441b22119305ad3c",
+    "hf2-7.json": "995b763923887ceca4eaec887f42e5d6b5acb329b35b29bbd6f1f60ce2ef28d7",
+    "hf2-8.json": "621abb212a82263398e164302bb1ddc9b2211ca2270193464b87a2ec1e4a04be",
+    "hf2-9.json": "b8c6e5dca048b61a7519cfc9f358f0bbe83e835a00b2c50932bb8e5073cae240",
+    "hf2-no-boredom-1.json": "f67d567abb3d8e4cd5c633dff3a4ba031842c027d0215f05c85c3bba34cc4180",
+    "hf2-no-boredom-10.json": "77803c823986a3859415e2e358279ddf0bb07235a48468ab915a9cb82fb066fe",
+    "hf2-no-boredom-2.json": "6d4f047a0855d44fb8a05947d52a24f0dfbb66c7e559ed845c3ca23854606412",
+    "hf2-no-boredom-3.json": "16e1d65c3aa9b70f9b6741a769b50161991ca8a8a5406ce0d09cee4bbf7db18a",
+    "hf2-no-boredom-4.json": "efeda8723d5d113545084637fd57b4f93ce55f10775ab4a27dce45a9c064706e",
+    "hf2-no-boredom-5.json": "559515023e91437622809a929ee06815a3de2e73855c5688fc0de72073e539fa",
+    "hf2-no-boredom-6.json": "0c9ee0405a07ff11438033f51a19b3fbdfdfb3a6830786cd8c94cc497d15f985",
+    "hf2-no-boredom-7.json": "53b7dd26fc49da7b06d56b09484e7cc84ee3e7e1142e5296c1b4e0082a16121e",
+    "hf2-no-boredom-8.json": "1ab527c6b566be72f95478b3c92e5206cb6df8f262b5afcb4238e8510bf54a2e",
+    "hf2-no-boredom-9.json": "91c507043ffc16e4db82c17d410843e6d45d293975d255e0177702599b1685f3",
+    "hf2-no-goals-1.json": "3478e8e21ea9e3c2b6c87bfa3055bbdfe9590235a34ce50af37bcb835ac9e61a",
+    "hf2-no-goals-10.json": "945ff9d295de8802a80c063bfb11eb3d3c5273723926c0082b2d815a4c7b1a93",
+    "hf2-no-goals-2.json": "2bc2ff3247678ea8f0be405533e3fb6628f2faabeaf3ffa094a09a1616fef403",
+    "hf2-no-goals-3.json": "a284fcb5166681d87c7c740af81ea6e8595582ae5fa44555f03ef2948806178b",
+    "hf2-no-goals-4.json": "886b875c3999903eccf50172f599b494732cd7f770e47463ece6d05bc13095ab",
+    "hf2-no-goals-5.json": "3197b3aa5f4380348267bb31e58962ea6221ad352cec21e333988d1a2581c6df",
+    "hf2-no-goals-6.json": "51e7a3495a765ca90c0f82eed1f5ab276f54dfe5ce818491a4be6005e4abc16c",
+    "hf2-no-goals-7.json": "ee47042d7630d9328e1fc4d59f99906f312e7d9fa18e151cefc075c39ecd1074",
+    "hf2-no-goals-8.json": "882f6e73e4e2d2fbb0ae04f54a9543cf26ca1424b123264f13d257d5a57bd024",
+    "hf2-no-goals-9.json": "90904560db691063ef007115710f59887f5f627ae41186621a977ce90ee5865a",
+    "hf2-no-memory-1.json": "fae498ff5eb36471b1191a30f25cb9b079a0468016cc85a6bc31af41e30498a5",
+    "hf2-no-memory-10.json": "09c4fffd6e9e89c7ce3685616c2219e73b7299caf30b0aa5112623619c367a83",
+    "hf2-no-memory-2.json": "5c159bdf3c9024c98c144af6a9b85a8036f51e5fc78b288eed434a58018ead8e",
+    "hf2-no-memory-3.json": "e2703174cb971e2617bbcadd639c63d6a7088c62a20cb2352bad9cef5da7df89",
+    "hf2-no-memory-4.json": "9100ae432c0bcd6f1b5919ff7b4dc5d7c4a6c45acec609ed165f756cf520a502",
+    "hf2-no-memory-5.json": "ac551ce2792effe90541665f34d84ed54aa15ab8c16562d6f218b03c5f315e5d",
+    "hf2-no-memory-6.json": "c719266b449fb884052e5762e000befd1576cb677354000406b730ec5dae836b",
+    "hf2-no-memory-7.json": "ab8afce9cf33dfe1427479b70533d9c63647f035b6536b25392678200f61ae48",
+    "hf2-no-memory-8.json": "614d9b1ccc36de6fefa574f60d2c10f9ea33f3d40790795962c6397b6b7b0c26",
+    "hf2-no-memory-9.json": "1e77128f76b6db7a6f3c82e8f1ab2431f396d578da2b40c958c426a0eac1a66d",
+    "hf3-1.json": "bda78214751f21546bf575158cf34c9695a155f217ed9dd89dbeeb587c35fe09",
+    "hf3-10.json": "7f92e8514bf1a3801b0233a090ccb81fc36ee3b6e22a355f0fb841a9cb4529e0",
+    "hf3-2.json": "ff3c260274043b2725f947ea59ea36451c87ce38b43c6d8975f1c5e7d3a08950",
+    "hf3-3.json": "389b096f48bbd4d7f3e6a1850a4bba5c47d26eecb657102ea60413e3b2babe43",
+    "hf3-4.json": "39fc56366194eee3d21ecb36b38f563bfd8e5670d269af9e3fee14e0e5d64759",
+    "hf3-5.json": "483c3d3213dcab6508f86d91c95915537843f2a2c58677468467d26330b75789",
+    "hf3-6.json": "5dccf97ab606a2420479f6931be2af8e3230033ff540e2b042c7629adbe187c7",
+    "hf3-7.json": "97846a7caa69ddf516954c6d101414eee4f5385a6df8e52b4d581f41f9f59653",
+    "hf3-8.json": "96c9b3e0c4bc986e3f02f1c0e44bd204475e336c1d09d35306fb46d4d2ebc5fa",
+    "hf3-9.json": "adc32f1c8308aeaeaa8d1c9cb61150ca72cd2a2b3a8f359066494b631de5f125",
+    "hf4-1.json": "47a30ee26c922bc24182b5c9e322f0f9c9a67895258089b994856dc9d8ce944c",
+    "hf4-10.json": "68ecea163c1e6c92b19b4f509a272248a0e84847b67bdd324909412608006d37",
+    "hf4-2.json": "7c1fb74f10cf4381a88352582cbbfd53ef06c8d9075f2906671e2df89ec4e597",
+    "hf4-3.json": "e8b0705607f65a5c7295a7657194f7035311ce965596e0d3baf3ef3137e48b91",
+    "hf4-4.json": "6ead95a3d80db72539ed133a4fb510354537fdd13064cfc33be5e3c12362ab6c",
+    "hf4-5.json": "0c36d8d95d86d2eaa24496e5da8540b8fff66bdb39645b33daa3e00cd74219cb",
+    "hf4-6.json": "517fd8e469884ad84d91da3f59268df1bdec4cbb6c83730dd1d832927e35686e",
+    "hf4-7.json": "9335ac11726ea9d082c2b42b1339a7e08b18a76e8cb98e838a998bd4d0a5875f",
+    "hf4-8.json": "c54b209c4f143b35afdc1cea6a1714f18459332ef3d886cc1efbeb6be468d878",
+    "hf4-9.json": "e5557a5036a2c750506f69a887acdda73c2e2691fea1cabffc27f3df69e18a69",
+    "hf4-no-curiosity-1.json": "947511df7fbc96f5074f0a6643251d0039b838417240b4372fa0812d4a677a3f",
+    "hf4-no-curiosity-10.json": "f420ea5d8b941ce94a8faabb1e35b48b325d4ab3cd72c265b7ec87df7efc610e",
+    "hf4-no-curiosity-2.json": "056392f57dd748220c543ed6a13a200d0644a03e00de8045911f60ee5b07931a",
+    "hf4-no-curiosity-3.json": "52884c8e546dd9058115231cbe5c9c9a178b2aaa82c1f1dae986e024b430696c",
+    "hf4-no-curiosity-4.json": "9c49dc37c471bee937e7605cfa43d21bdf0e00737e647d86babf6c6ded392b45",
+    "hf4-no-curiosity-5.json": "4419a2d0bf7fd7fe8bfab13b75659d1aebbb6c814dfa65b159b29ed2e81da4d4",
+    "hf4-no-curiosity-6.json": "38bdbf003096a08f37ec2ef20b8c06303ab83d8e3f0f5a9e7800ecf6bcf0afe6",
+    "hf4-no-curiosity-7.json": "baa51808860c0144cce09d6d72c944cb2a23ae13293530ae421dd196c0d64211",
+    "hf4-no-curiosity-8.json": "750ec4f71c7394e090eae5545238d65ecc8fd12eb599a173e6f18dbe49b8c309",
+    "hf4-no-curiosity-9.json": "15eb37cf5a712ba4309df88c612d04bdc2b52604e5dac70a5840844508d9ffe2",
+    "hf4-no-planning-1.json": "c584b334cf936c2e8095f6af67f12806d9ea2cc59aa2dad96f2c5de20acfd2a4",
+    "hf4-no-planning-10.json": "1a51d92c13317f5e99008b1284264e4197bc0e06e43938c71b0715e7838d9ddb",
+    "hf4-no-planning-2.json": "8dabfee6f479665f605d870a92f81e0fe645931f63a4c3569e633d08bf0b0814",
+    "hf4-no-planning-3.json": "f3c0b8d88246e8bd700c38ca51c8fd261125168c980d523bf3b51f88e30f54fa",
+    "hf4-no-planning-4.json": "c061b628302158f53cf1ac279c09171d986c3846b8a2a390b4d78e1f4227da7f",
+    "hf4-no-planning-5.json": "06505c754cef373e25fc9be7600bd16ea4c4593fb651a2d938050355af3c71e6",
+    "hf4-no-planning-6.json": "ab5cd20e6a2731eded315a2ff0d63bde04a839aca866849501cb239646d25b01",
+    "hf4-no-planning-7.json": "725d2834131f5c52c13e1ee8acceea0d5626a3fd7fb07b6fe534e974f71eb1f0",
+    "hf4-no-planning-8.json": "ae3035f6297ef4c65cc5c67e3a8afe7ee2e5f6131ab8292ee1b7cb78278f0de9",
+    "hf4-no-planning-9.json": "b298b9de1397adc83086942dec76ec02ba39c75a8402633f7f93d79adc402caf",
+    "llm-claude-1.json": "886267a2a4a517b95b45acd0659dfd8d61508f56ea8adee40f1a27d20e90d1a4",
+    "llm-gemma-1.json": "bf0eda94fb7b73ecd534e44ec9f8c03653dcdd9166f7fc52b9dbf569946bf685",
+    "llm-gemma-2.json": "88afedb2335f54092ac7062aeb79993ef30a84ec5e463e84848d5bfb1f9e5b43",
+    "llm-gemma-3.json": "e985a650db1a8f1d621d4adb1ff51a552c793b12640eb7b1216fbfa46a2582e0",
+    "llm-gemma-open-1.json": "d986a4736ce8016b0526e5ded0576a1477138bcd6b9d7283de733e3ca5c19dca",
+    "llm-gemma-open-2.json": "7e7fb8848a0e66bdfc920ab9b54fe2fa2c46efb96e262d66df266af4a749de55",
+    "llm-gemma-open-3.json": "79a5fcdf0e870095e6b7540a4afded8ec08a9130d9aaf46807a5aa5f8a39b745",
+    "random-1.json": "2786eafa91851dce778277bfbf102dae0ac4bc2c9a5b90a0936fbb0c1e13eaa3",
+    "random-10.json": "9b9cf8b5fb20485a6d0e446222c3c60c20980dd25bbc5d8c44f209dd3b78934d",
+    "random-2.json": "1bf881a763a936f500887910220a25d8f931c9807ad1bb9a805989261df39903",
+    "random-3.json": "9714b47dcdfe67acdb55c3680d22a8b73ae62aba3e905020e104e1b62565caf4",
+    "random-4.json": "95156589407071fd614ffb23eea8eb73b0dba1ca27fb65b3dbda862012dd7d4b",
+    "random-5.json": "f167bb596ed8f53b62b1bc2800ebd0a31b9951e2d894bf54160b21e1fac15053",
+    "random-6.json": "b2c2e10e97baee8ee428910ff592f087611a0d89ebcfbcd030f1255dc8db0449",
+    "random-7.json": "a831020190bf4dbea2b0831881b0b5af4e14647c733db6a61e7a4b0a43fb580c",
+    "random-8.json": "a34cd880dc6c11f3c39c0d956d4f79f4f3b5034b23d62275916e1af4dc58e5a8",
+    "random-9.json": "b0c2bfc35f096f060ac269ed8c20d8761dc20f91545e9731181bdbe5caf5d853",
+    "scripted-1.json": "faa987da4d9a00e189be73e34bbd34ca4a3cc8afc413a330a87c57b661f1af00",
+    "scripted-2.json": "839fc369c2628e60406cb592a15d9fac2e13a3c936b325124c2b45f0d6607f2b",
+    "scripted-3.json": "f462ecea323042be54fac00f6321941558e203995dbcd21e78d8074ae9d5b075"
+  },
+  "determinism": [
+    {
+      "seed": 1,
+      "hashes": [
+        "7b3dd0624e33c8acce75490a65cc2ff535817218e71855000e43d40505703378",
+        "7b3dd0624e33c8acce75490a65cc2ff535817218e71855000e43d40505703378",
+        "7b3dd0624e33c8acce75490a65cc2ff535817218e71855000e43d40505703378"
+      ]
+    },
+    {
+      "seed": 2,
+      "hashes": [
+        "ed384e56031eaff71f34e87b38f2efca3ba325aaac370cc3cdaf4bfde163b6ac",
+        "ed384e56031eaff71f34e87b38f2efca3ba325aaac370cc3cdaf4bfde163b6ac",
+        "ed384e56031eaff71f34e87b38f2efca3ba325aaac370cc3cdaf4bfde163b6ac"
+      ]
+    },
+    {
+      "seed": 3,
+      "hashes": [
+        "136b030384681ecea0d388fcceda1d43a118b4ad8170a2de06e267ad1cc5aec6",
+        "136b030384681ecea0d388fcceda1d43a118b4ad8170a2de06e267ad1cc5aec6",
+        "136b030384681ecea0d388fcceda1d43a118b4ad8170a2de06e267ad1cc5aec6"
+      ]
+    }
+  ],
+  "compatibility": [
+    {
+      "file": "hf-1.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf-10.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf-2.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf-3.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf-4.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf-5.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf-6.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf-7.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf-8.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf-9.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf-no-boredom-1.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf-no-boredom-2.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf-no-boredom-3.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-1.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-10.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-2.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-3.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-4.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-5.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-6.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-7.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-8.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-9.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-boredom-1.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-boredom-10.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-boredom-2.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-boredom-3.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-boredom-4.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-boredom-5.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-boredom-6.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-boredom-7.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-boredom-8.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-boredom-9.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-goals-1.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-goals-10.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-goals-2.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-goals-3.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-goals-4.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-goals-5.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-goals-6.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-goals-7.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-goals-8.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-goals-9.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-memory-1.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-memory-10.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-memory-2.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-memory-3.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-memory-4.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-memory-5.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-memory-6.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-memory-7.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-memory-8.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf2-no-memory-9.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf3-1.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf3-10.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf3-2.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf3-3.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf3-4.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf3-5.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf3-6.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf3-7.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf3-8.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "hf3-9.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "random-1.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "random-10.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "random-2.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "random-3.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "random-4.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "random-5.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "random-6.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "random-7.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "random-8.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    },
+    {
+      "file": "random-9.json",
+      "byteIdentical": true,
+      "actionsIdentical": true
+    }
+  ],
+  "physicalReplay": {
+    "validated": 113,
+    "runs": [
+      {
+        "file": "hf4-1.json",
+        "freeGoalIds": [],
+        "routeFrames": 31,
+        "maxRoute": 3,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "achieved",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 3,
+        "freeThrows": 2
+      },
+      {
+        "file": "hf4-10.json",
+        "freeGoalIds": [],
+        "routeFrames": 47,
+        "maxRoute": 3,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 4,
+        "freeThrows": 2
+      },
+      {
+        "file": "hf4-2.json",
+        "freeGoalIds": [],
+        "routeFrames": 44,
+        "maxRoute": 3,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 3,
+        "freeThrows": 3
+      },
+      {
+        "file": "hf4-3.json",
+        "freeGoalIds": [],
+        "routeFrames": 38,
+        "maxRoute": 3,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "achieved",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 5,
+        "freeThrows": 3
+      },
+      {
+        "file": "hf4-4.json",
+        "freeGoalIds": [],
+        "routeFrames": 33,
+        "maxRoute": 3,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "achieved",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 10,
+        "freeThrows": 4
+      },
+      {
+        "file": "hf4-5.json",
+        "freeGoalIds": [],
+        "routeFrames": 44,
+        "maxRoute": 3,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 12,
+        "freeThrows": 5
+      },
+      {
+        "file": "hf4-6.json",
+        "freeGoalIds": [],
+        "routeFrames": 51,
+        "maxRoute": 3,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 8,
+        "freeThrows": 5
+      },
+      {
+        "file": "hf4-7.json",
+        "freeGoalIds": [],
+        "routeFrames": 42,
+        "maxRoute": 3,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "achieved",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 8,
+        "freeThrows": 3
+      },
+      {
+        "file": "hf4-8.json",
+        "freeGoalIds": [],
+        "routeFrames": 42,
+        "maxRoute": 3,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 7,
+        "freeThrows": 5
+      },
+      {
+        "file": "hf4-9.json",
+        "freeGoalIds": [],
+        "routeFrames": 51,
+        "maxRoute": 3,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 8,
+        "freeThrows": 2
+      },
+      {
+        "file": "hf4-no-curiosity-1.json",
+        "freeGoalIds": [],
+        "routeFrames": 33,
+        "maxRoute": 3,
+        "curiosityFrames": 0,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "achieved",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 1,
+        "freeThrows": 2
+      },
+      {
+        "file": "hf4-no-curiosity-10.json",
+        "freeGoalIds": [],
+        "routeFrames": 44,
+        "maxRoute": 3,
+        "curiosityFrames": 0,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "achieved",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 5,
+        "freeThrows": 1
+      },
+      {
+        "file": "hf4-no-curiosity-2.json",
+        "freeGoalIds": [],
+        "routeFrames": 54,
+        "maxRoute": 3,
+        "curiosityFrames": 0,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 2,
+        "freeThrows": 1
+      },
+      {
+        "file": "hf4-no-curiosity-3.json",
+        "freeGoalIds": [],
+        "routeFrames": 31,
+        "maxRoute": 3,
+        "curiosityFrames": 0,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "achieved",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 2,
+        "freeThrows": 2
+      },
+      {
+        "file": "hf4-no-curiosity-4.json",
+        "freeGoalIds": [],
+        "routeFrames": 37,
+        "maxRoute": 3,
+        "curiosityFrames": 0,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "achieved",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 6,
+        "freeThrows": 0
+      },
+      {
+        "file": "hf4-no-curiosity-5.json",
+        "freeGoalIds": [],
+        "routeFrames": 39,
+        "maxRoute": 3,
+        "curiosityFrames": 0,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "achieved",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 4,
+        "freeThrows": 2
+      },
+      {
+        "file": "hf4-no-curiosity-6.json",
+        "freeGoalIds": [],
+        "routeFrames": 36,
+        "maxRoute": 3,
+        "curiosityFrames": 0,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "achieved",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 9,
+        "freeThrows": 3
+      },
+      {
+        "file": "hf4-no-curiosity-7.json",
+        "freeGoalIds": [],
+        "routeFrames": 45,
+        "maxRoute": 3,
+        "curiosityFrames": 0,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "achieved",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 4,
+        "freeThrows": 3
+      },
+      {
+        "file": "hf4-no-curiosity-8.json",
+        "freeGoalIds": [],
+        "routeFrames": 48,
+        "maxRoute": 3,
+        "curiosityFrames": 0,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 2,
+        "freeThrows": 3
+      },
+      {
+        "file": "hf4-no-curiosity-9.json",
+        "freeGoalIds": [],
+        "routeFrames": 37,
+        "maxRoute": 3,
+        "curiosityFrames": 0,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "achieved",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 3,
+        "freeThrows": 2
+      },
+      {
+        "file": "hf4-no-planning-1.json",
+        "freeGoalIds": [],
+        "routeFrames": 0,
+        "maxRoute": 0,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 3,
+        "freeThrows": 2
+      },
+      {
+        "file": "hf4-no-planning-10.json",
+        "freeGoalIds": [],
+        "routeFrames": 0,
+        "maxRoute": 0,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 4,
+        "freeThrows": 2
+      },
+      {
+        "file": "hf4-no-planning-2.json",
+        "freeGoalIds": [],
+        "routeFrames": 0,
+        "maxRoute": 0,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 3,
+        "freeThrows": 3
+      },
+      {
+        "file": "hf4-no-planning-3.json",
+        "freeGoalIds": [],
+        "routeFrames": 0,
+        "maxRoute": 0,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 5,
+        "freeThrows": 3
+      },
+      {
+        "file": "hf4-no-planning-4.json",
+        "freeGoalIds": [],
+        "routeFrames": 0,
+        "maxRoute": 0,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 10,
+        "freeThrows": 4
+      },
+      {
+        "file": "hf4-no-planning-5.json",
+        "freeGoalIds": [],
+        "routeFrames": 8,
+        "maxRoute": 1,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 12,
+        "freeThrows": 5
+      },
+      {
+        "file": "hf4-no-planning-6.json",
+        "freeGoalIds": [],
+        "routeFrames": 0,
+        "maxRoute": 0,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 8,
+        "freeThrows": 5
+      },
+      {
+        "file": "hf4-no-planning-7.json",
+        "freeGoalIds": [],
+        "routeFrames": 0,
+        "maxRoute": 0,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 8,
+        "freeThrows": 3
+      },
+      {
+        "file": "hf4-no-planning-8.json",
+        "freeGoalIds": [],
+        "routeFrames": 2,
+        "maxRoute": 1,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 7,
+        "freeThrows": 5
+      },
+      {
+        "file": "hf4-no-planning-9.json",
+        "freeGoalIds": [],
+        "routeFrames": 0,
+        "maxRoute": 0,
+        "curiosityFrames": 180,
+        "taskGoal": [
+          {
+            "id": "g1",
+            "label": "Put as many cubes as you can on the Spire before the hour ends.",
+            "minute": 180,
+            "status": "active",
+            "source": "task",
+            "proposed": false,
+            "adopted": true
+          }
+        ],
+        "freePlacements": 8,
+        "freeThrows": 2
+      }
+    ]
+  },
+  "arms": [
+    {
+      "arm": "hf4",
+      "versions": [
+        {
+          "version": "tarball",
+          "medians": {
+            "cellsVisited": 27.5,
+            "kindEntropy": 2.2522483264484343,
+            "manipulationShare": 0.10555555555555556,
+            "idleShare": 0.22777777777777777,
+            "freeSpireObjects": 0,
+            "freeMaxStack": 1,
+            "repeatedPursuit": 0,
+            "taskScore": 0.5
+          },
+          "perSeed": [
+            {
+              "cellsVisited": 30,
+              "distinctActs": 15,
+              "kindEntropy": 2.084584221659979,
+              "repeatWithVariation": 0.5847953216374269,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.22777777777777777,
+              "freeSpireObjects": 0,
+              "taskScore": 1,
+              "boredomMean0": 0.07740494406731396,
+              "boredomMean1": 0.06313805859190792,
+              "boredomMean2": 0.025796980552836857,
+              "manipulationShare": 0.05555555555555555,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 23,
+              "freeRememberedTargetMoves": 18,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.1396653984092755,
+              "boredomMin1": 0.04176534069503006,
+              "boredomMax1": 0.08997302914767728,
+              "boredomMin2": 0,
+              "boredomMax2": 0.04122959002238867,
+              "boredomMin3": 0,
+              "boredomMax3": 0,
+              "boredomMean3": 0,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 42,
+              "distinctActs": 16,
+              "kindEntropy": 2.1233558220428437,
+              "repeatWithVariation": 0.6140350877192983,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.22777777777777777,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0,
+              "boredomMean1": 0.07025343882061508,
+              "boredomMean2": 0.0730793384362208,
+              "manipulationShare": 0.06666666666666667,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 31,
+              "freeRememberedTargetMoves": 31,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0,
+              "boredomMin1": 0,
+              "boredomMax1": 0.11650722596094627,
+              "boredomMin2": 0.051886661751938665,
+              "boredomMax2": 0.10250911203655384,
+              "boredomMin3": 0.023723171925562232,
+              "boredomMax3": 0.051221017966913064,
+              "boredomMean3": 0.035664248120689385,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 22,
+              "distinctActs": 19,
+              "kindEntropy": 2.2118561412946875,
+              "repeatWithVariation": 0.5906432748538012,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.22777777777777777,
+              "freeSpireObjects": 0,
+              "taskScore": 2,
+              "boredomMean0": 0.0494762359543945,
+              "boredomMean1": 0.12795116153395072,
+              "boredomMean2": 0.08564243982872265,
+              "manipulationShare": 0.08888888888888889,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 17,
+              "freeRememberedTargetMoves": 15,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.18309749569109968,
+              "boredomMin1": 0.0954694946960339,
+              "boredomMax1": 0.1579298439605984,
+              "boredomMin2": 0.060227922669561916,
+              "boredomMax2": 0.12164086304425228,
+              "boredomMin3": 0.03506751641728972,
+              "boredomMax3": 0.07571486313694746,
+              "boredomMean3": 0.05264699048126931,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 29,
+              "distinctActs": 22,
+              "kindEntropy": 2.377779820598103,
+              "repeatWithVariation": 0.5380116959064327,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.21666666666666667,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0,
+              "boredomMean1": 0,
+              "boredomMean2": 0.09015174114849014,
+              "manipulationShare": 0.16111111111111112,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 12,
+              "freeRememberedTargetMoves": 11,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0,
+              "boredomMin1": 0,
+              "boredomMax1": 0,
+              "boredomMin2": 0,
+              "boredomMax2": 0.195549994581543,
+              "boredomMin3": 0.07403747807465573,
+              "boredomMax3": 0.15922326357432065,
+              "boredomMean3": 0.11112117214087064,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 26,
+              "distinctActs": 22,
+              "kindEntropy": 2.4532717189431827,
+              "repeatWithVariation": 0.4152046783625731,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.23333333333333334,
+              "freeSpireObjects": 0,
+              "taskScore": 1,
+              "boredomMean0": 0.15190598702184926,
+              "boredomMean1": 0.39123274657582574,
+              "boredomMean2": 0.17367252036518496,
+              "manipulationShare": 0.18888888888888888,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 17,
+              "freeRememberedTargetMoves": 16,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.537219710221146,
+              "boredomMin1": 0.2550668437956327,
+              "boredomMax1": 0.5566137212202864,
+              "boredomMin2": 0.11211371812741006,
+              "boredomMax2": 0.2517949138763527,
+              "boredomMin3": 0.05166598343997424,
+              "boredomMax3": 0.11067542238688452,
+              "boredomMean3": 0.07752321469039229,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 19,
+              "distinctActs": 18,
+              "kindEntropy": 2.3747353732296164,
+              "repeatWithVariation": 0.4093567251461988,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.22777777777777777,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.08062912749573088,
+              "boredomMean1": 0.1655345599506538,
+              "boredomMean2": 0.08039232316251933,
+              "manipulationShare": 0.14444444444444443,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 21,
+              "freeRememberedTargetMoves": 20,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.2603524396392473,
+              "boredomMin1": 0.11880004431263691,
+              "boredomMax1": 0.22616465118139434,
+              "boredomMin2": 0.051808169334169124,
+              "boredomMax2": 0.11727614342384972,
+              "boredomMin3": 0.02368730294041066,
+              "boredomMax3": 0.051143532512943006,
+              "boredomMean3": 0.035634082659258604,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 43,
+              "distinctActs": 19,
+              "kindEntropy": 2.2442188247142796,
+              "repeatWithVariation": 0.5321637426900585,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.19444444444444445,
+              "freeSpireObjects": 0,
+              "taskScore": 1,
+              "boredomMean0": 0.04119488401276684,
+              "boredomMean1": 0.024680991035516634,
+              "boredomMean2": 0.031115471159522474,
+              "manipulationShare": 0.12222222222222222,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 4,
+              "freeRememberedTargetMoves": 2,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.07402761626391015,
+              "boredomMin1": 0,
+              "boredomMax1": 0.040326704271971534,
+              "boredomMin2": 0,
+              "boredomMax2": 0.04474887124345866,
+              "boredomMin3": 0,
+              "boredomMax3": 0.022108876561295156,
+              "boredomMean3": 0.002818837209820164,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 25,
+              "distinctActs": 18,
+              "kindEntropy": 2.2602778281825895,
+              "repeatWithVariation": 0.5497076023391813,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.24444444444444444,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.053441491679418154,
+              "boredomMean1": 0.14315153377423423,
+              "boredomMean2": 0.105056651762941,
+              "manipulationShare": 0.1,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 22,
+              "freeRememberedTargetMoves": 8,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.09853966791290618,
+              "boredomMin1": 0.04538655411738069,
+              "boredomMax1": 0.24406676515444772,
+              "boredomMin2": 0.07009955378096842,
+              "boredomMax2": 0.1485779152824465,
+              "boredomMin3": 0.03230398289827337,
+              "boredomMax3": 0.0692002399624531,
+              "boredomMean3": 0.048471447911220884,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 26,
+              "distinctActs": 17,
+              "kindEntropy": 2.2638916011252608,
+              "repeatWithVariation": 0.5847953216374269,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.2388888888888889,
+              "freeSpireObjects": 0,
+              "taskScore": 1,
+              "boredomMean0": 0,
+              "boredomMean1": 0.29438431170472174,
+              "boredomMean2": 0.16617281554957847,
+              "manipulationShare": 0.1111111111111111,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 6,
+              "freeRememberedTargetMoves": 6,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0,
+              "boredomMin1": 0,
+              "boredomMax1": 0.4055856055920524,
+              "boredomMin2": 0.10587698861759925,
+              "boredomMax2": 0.24540923497567846,
+              "boredomMin3": 0.04840750201535434,
+              "boredomMax3": 0.10451869297832922,
+              "boredomMean3": 0.07268180665692726,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 37,
+              "distinctActs": 16,
+              "kindEntropy": 2.0805866856436945,
+              "repeatWithVariation": 0.6023391812865497,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.18888888888888888,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.01141251380314236,
+              "boredomMean1": 0.022764581229665508,
+              "boredomMean2": 0.07275790563665517,
+              "manipulationShare": 0.07777777777777778,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 21,
+              "freeRememberedTargetMoves": 18,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.04037849654382814,
+              "boredomMin1": 0,
+              "boredomMax1": 0.10664344441208867,
+              "boredomMin2": 0.05482161425449553,
+              "boredomMax2": 0.10218819386977959,
+              "boredomMin3": 0.0251654587539932,
+              "boredomMax3": 0.054118355808427956,
+              "boredomMean3": 0.0379049312488076,
+              "repeatedPursuit": 0
+            }
+          ],
+          "tests": [
+            {
+              "metric": "cellsVisited",
+              "p": 0.019117105804412306,
+              "holm": 0.11470263482647383
+            },
+            {
+              "metric": "kindEntropy",
+              "p": 0.0004330035289787612,
+              "holm": 0.0034640282318300895
+            },
+            {
+              "metric": "manipulationShare",
+              "p": 0.0014938621749767261,
+              "holm": 0.010457035224837083
+            },
+            {
+              "metric": "idleShare",
+              "p": 0.5439823334560177,
+              "holm": 1
+            },
+            {
+              "metric": "freeSpireObjects",
+              "p": 1,
+              "holm": 1
+            },
+            {
+              "metric": "freeMaxStack",
+              "p": 1,
+              "holm": 1
+            },
+            {
+              "metric": "repeatedPursuit",
+              "p": 1,
+              "holm": 1
+            },
+            {
+              "metric": "taskScore",
+              "p": 0.032507739938080496,
+              "holm": 0.16253869969040247
+            }
+          ],
+          "taskCubes": [1, 0, 2, 0, 1, 0, 1, 0, 1, 0],
+          "taskRouteCounts": [31, 44, 38, 33, 44, 51, 42, 52, 51, 39],
+          "freeRouteCounts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          "maxTaskRoute": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          "curiosity": [
+            {
+              "seed": 1,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 2,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 3,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 4,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 5,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 6,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 7,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 8,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 9,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 10,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            }
+          ],
+          "recordingHashes": [
+            {
+              "file": "hf4-1.json",
+              "sha256": "47a30ee26c922bc24182b5c9e322f0f9c9a67895258089b994856dc9d8ce944c"
+            },
+            {
+              "file": "hf4-2.json",
+              "sha256": "7c1fb74f10cf4381a88352582cbbfd53ef06c8d9075f2906671e2df89ec4e597"
+            },
+            {
+              "file": "hf4-3.json",
+              "sha256": "e8b0705607f65a5c7295a7657194f7035311ce965596e0d3baf3ef3137e48b91"
+            },
+            {
+              "file": "hf4-4.json",
+              "sha256": "6ead95a3d80db72539ed133a4fb510354537fdd13064cfc33be5e3c12362ab6c"
+            },
+            {
+              "file": "hf4-5.json",
+              "sha256": "0c36d8d95d86d2eaa24496e5da8540b8fff66bdb39645b33daa3e00cd74219cb"
+            },
+            {
+              "file": "hf4-6.json",
+              "sha256": "517fd8e469884ad84d91da3f59268df1bdec4cbb6c83730dd1d832927e35686e"
+            },
+            {
+              "file": "hf4-7.json",
+              "sha256": "9335ac11726ea9d082c2b42b1339a7e08b18a76e8cb98e838a998bd4d0a5875f"
+            },
+            {
+              "file": "hf4-8.json",
+              "sha256": "c54b209c4f143b35afdc1cea6a1714f18459332ef3d886cc1efbeb6be468d878"
+            },
+            {
+              "file": "hf4-9.json",
+              "sha256": "e5557a5036a2c750506f69a887acdda73c2e2691fea1cabffc27f3df69e18a69"
+            },
+            {
+              "file": "hf4-10.json",
+              "sha256": "68ecea163c1e6c92b19b4f509a272248a0e84847b67bdd324909412608006d37"
+            }
+          ]
+        },
+        {
+          "version": "2.12.0",
+          "medians": {
+            "cellsVisited": 29.5,
+            "kindEntropy": 2.25405521291977,
+            "manipulationShare": 0.11666666666666667,
+            "idleShare": 0.22777777777777777,
+            "freeSpireObjects": 0,
+            "freeMaxStack": 1,
+            "repeatedPursuit": 0,
+            "taskScore": 1
+          },
+          "perSeed": [
+            {
+              "cellsVisited": 30,
+              "distinctActs": 15,
+              "kindEntropy": 2.084584221659979,
+              "repeatWithVariation": 0.5847953216374269,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.22777777777777777,
+              "freeSpireObjects": 0,
+              "taskScore": 1,
+              "boredomMean0": 0.07740494406731396,
+              "boredomMean1": 0.06313805859190792,
+              "boredomMean2": 0.025796980552836857,
+              "manipulationShare": 0.05555555555555555,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 23,
+              "freeRememberedTargetMoves": 18,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.1396653984092755,
+              "boredomMin1": 0.04176534069503006,
+              "boredomMax1": 0.08997302914767728,
+              "boredomMin2": 0,
+              "boredomMax2": 0.04122959002238867,
+              "boredomMin3": 0,
+              "boredomMax3": 0,
+              "boredomMean3": 0,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 42,
+              "distinctActs": 16,
+              "kindEntropy": 2.1233558220428437,
+              "repeatWithVariation": 0.6140350877192983,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.22777777777777777,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0,
+              "boredomMean1": 0.07025343882061508,
+              "boredomMean2": 0.0730793384362208,
+              "manipulationShare": 0.06666666666666667,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 31,
+              "freeRememberedTargetMoves": 31,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0,
+              "boredomMin1": 0,
+              "boredomMax1": 0.11650722596094627,
+              "boredomMin2": 0.051886661751938665,
+              "boredomMax2": 0.10250911203655384,
+              "boredomMin3": 0.023723171925562232,
+              "boredomMax3": 0.051221017966913064,
+              "boredomMean3": 0.035664248120689385,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 22,
+              "distinctActs": 19,
+              "kindEntropy": 2.2118561412946875,
+              "repeatWithVariation": 0.5906432748538012,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.22777777777777777,
+              "freeSpireObjects": 0,
+              "taskScore": 2,
+              "boredomMean0": 0.0494762359543945,
+              "boredomMean1": 0.12795116153395072,
+              "boredomMean2": 0.08564243982872265,
+              "manipulationShare": 0.08888888888888889,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 17,
+              "freeRememberedTargetMoves": 15,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.18309749569109968,
+              "boredomMin1": 0.0954694946960339,
+              "boredomMax1": 0.1579298439605984,
+              "boredomMin2": 0.060227922669561916,
+              "boredomMax2": 0.12164086304425228,
+              "boredomMin3": 0.03506751641728972,
+              "boredomMax3": 0.07571486313694746,
+              "boredomMean3": 0.05264699048126931,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 29,
+              "distinctActs": 22,
+              "kindEntropy": 2.377779820598103,
+              "repeatWithVariation": 0.5380116959064327,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.21666666666666667,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0,
+              "boredomMean1": 0,
+              "boredomMean2": 0.09015174114849014,
+              "manipulationShare": 0.16111111111111112,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 12,
+              "freeRememberedTargetMoves": 11,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0,
+              "boredomMin1": 0,
+              "boredomMax1": 0,
+              "boredomMin2": 0,
+              "boredomMax2": 0.195549994581543,
+              "boredomMin3": 0.07403747807465573,
+              "boredomMax3": 0.15922326357432065,
+              "boredomMean3": 0.11112117214087064,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 26,
+              "distinctActs": 22,
+              "kindEntropy": 2.4532717189431827,
+              "repeatWithVariation": 0.4152046783625731,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.23333333333333334,
+              "freeSpireObjects": 0,
+              "taskScore": 1,
+              "boredomMean0": 0.15190598702184926,
+              "boredomMean1": 0.39123274657582574,
+              "boredomMean2": 0.17367252036518496,
+              "manipulationShare": 0.18888888888888888,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 17,
+              "freeRememberedTargetMoves": 16,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.537219710221146,
+              "boredomMin1": 0.2550668437956327,
+              "boredomMax1": 0.5566137212202864,
+              "boredomMin2": 0.11211371812741006,
+              "boredomMax2": 0.2517949138763527,
+              "boredomMin3": 0.05166598343997424,
+              "boredomMax3": 0.11067542238688452,
+              "boredomMean3": 0.07752321469039229,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 19,
+              "distinctActs": 18,
+              "kindEntropy": 2.3747353732296164,
+              "repeatWithVariation": 0.4093567251461988,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.22777777777777777,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.08062912749573088,
+              "boredomMean1": 0.1655345599506538,
+              "boredomMean2": 0.08039232316251933,
+              "manipulationShare": 0.14444444444444443,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 21,
+              "freeRememberedTargetMoves": 20,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.2603524396392473,
+              "boredomMin1": 0.11880004431263691,
+              "boredomMax1": 0.22616465118139434,
+              "boredomMin2": 0.051808169334169124,
+              "boredomMax2": 0.11727614342384972,
+              "boredomMin3": 0.02368730294041066,
+              "boredomMax3": 0.051143532512943006,
+              "boredomMean3": 0.035634082659258604,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 43,
+              "distinctActs": 19,
+              "kindEntropy": 2.2442188247142796,
+              "repeatWithVariation": 0.5321637426900585,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.19444444444444445,
+              "freeSpireObjects": 0,
+              "taskScore": 1,
+              "boredomMean0": 0.04119488401276684,
+              "boredomMean1": 0.024680991035516634,
+              "boredomMean2": 0.031115471159522474,
+              "manipulationShare": 0.12222222222222222,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 4,
+              "freeRememberedTargetMoves": 2,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.07402761626391015,
+              "boredomMin1": 0,
+              "boredomMax1": 0.040326704271971534,
+              "boredomMin2": 0,
+              "boredomMax2": 0.04474887124345866,
+              "boredomMin3": 0,
+              "boredomMax3": 0.022108876561295156,
+              "boredomMean3": 0.002818837209820164,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 39,
+              "distinctActs": 20,
+              "kindEntropy": 2.2850682286058044,
+              "repeatWithVariation": 0.5263157894736842,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.19444444444444445,
+              "freeSpireObjects": 0,
+              "taskScore": 2,
+              "boredomMean0": 0.05349757632907772,
+              "boredomMean1": 0.08477409133555641,
+              "boredomMean2": 0.07179799253357437,
+              "manipulationShare": 0.1388888888888889,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 8,
+              "freeRememberedTargetMoves": 6,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.09853966791290618,
+              "boredomMin1": 0.04515941544584856,
+              "boredomMax1": 0.1276482697662325,
+              "boredomMin2": 0.04970442403539604,
+              "boredomMax2": 0.09705881598437464,
+              "boredomMin3": 0.02236999654416621,
+              "boredomMax3": 0.049066804710948535,
+              "boredomMean3": 0.03378546724034817,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 26,
+              "distinctActs": 17,
+              "kindEntropy": 2.2638916011252608,
+              "repeatWithVariation": 0.5847953216374269,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.2388888888888889,
+              "freeSpireObjects": 0,
+              "taskScore": 1,
+              "boredomMean0": 0,
+              "boredomMean1": 0.29438431170472174,
+              "boredomMean2": 0.16617281554957847,
+              "manipulationShare": 0.1111111111111111,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 6,
+              "freeRememberedTargetMoves": 6,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0,
+              "boredomMin1": 0,
+              "boredomMax1": 0.4055856055920524,
+              "boredomMin2": 0.10587698861759925,
+              "boredomMax2": 0.24540923497567846,
+              "boredomMin3": 0.04840750201535434,
+              "boredomMax3": 0.10451869297832922,
+              "boredomMean3": 0.07268180665692726,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 31,
+              "distinctActs": 16,
+              "kindEntropy": 2.058845933713752,
+              "repeatWithVariation": 0.631578947368421,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.20555555555555555,
+              "freeSpireObjects": 0,
+              "taskScore": 1,
+              "boredomMean0": 0.01141251380314236,
+              "boredomMean1": 0.022764581229665508,
+              "boredomMean2": 0.07019434753128834,
+              "manipulationShare": 0.06666666666666667,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 20,
+              "freeRememberedTargetMoves": 18,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.04037849654382814,
+              "boredomMin1": 0,
+              "boredomMax1": 0.10664344441208867,
+              "boredomMin2": 0.04550133883259173,
+              "boredomMax2": 0.10218819386977959,
+              "boredomMin3": 0.020969251915598407,
+              "boredomMax3": 0.044917628775156475,
+              "boredomMean3": 0.03146319989925285,
+              "repeatedPursuit": 0
+            }
+          ],
+          "tests": [
+            {
+              "metric": "cellsVisited",
+              "p": 0.027203446708090672,
+              "holm": 0.13601723354045336
+            },
+            {
+              "metric": "kindEntropy",
+              "p": 0.0005196042347745134,
+              "holm": 0.004156833878196107
+            },
+            {
+              "metric": "manipulationShare",
+              "p": 0.0015804628807724783,
+              "holm": 0.011063240165407348
+            },
+            {
+              "metric": "idleShare",
+              "p": 0.75392409448137,
+              "holm": 1
+            },
+            {
+              "metric": "freeSpireObjects",
+              "p": 1,
+              "holm": 1
+            },
+            {
+              "metric": "freeMaxStack",
+              "p": 1,
+              "holm": 1
+            },
+            {
+              "metric": "repeatedPursuit",
+              "p": 1,
+              "holm": 1
+            },
+            {
+              "metric": "taskScore",
+              "p": 0.0030959752321981426,
+              "holm": 0.018575851393188854
+            }
+          ],
+          "taskCubes": [1, 0, 2, 0, 1, 0, 1, 2, 1, 1],
+          "taskRouteCounts": [31, 44, 38, 33, 44, 51, 42, 42, 51, 47],
+          "freeRouteCounts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          "maxTaskRoute": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          "curiosity": [
+            {
+              "seed": 1,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 2,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 3,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 4,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 5,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 6,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 7,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 8,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 9,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 10,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            }
+          ],
+          "recordingHashes": [
+            {
+              "file": "hf4-1.json",
+              "sha256": "7b3dd0624e33c8acce75490a65cc2ff535817218e71855000e43d40505703378"
+            },
+            {
+              "file": "hf4-2.json",
+              "sha256": "ed384e56031eaff71f34e87b38f2efca3ba325aaac370cc3cdaf4bfde163b6ac"
+            },
+            {
+              "file": "hf4-3.json",
+              "sha256": "136b030384681ecea0d388fcceda1d43a118b4ad8170a2de06e267ad1cc5aec6"
+            },
+            {
+              "file": "hf4-4.json",
+              "sha256": "13babc2ab7635e96d47668caa143c211fd258c75b56510a1b4634eed972ed061"
+            },
+            {
+              "file": "hf4-5.json",
+              "sha256": "c96d3ad8888295095d28e56f26c0a2e3c2ea4cc071c8233d118dd1f0df0eb559"
+            },
+            {
+              "file": "hf4-6.json",
+              "sha256": "99d269e0064844aa26e7859d094a178446b2e8f6b9247d5463dcc8b7544b2fd6"
+            },
+            {
+              "file": "hf4-7.json",
+              "sha256": "18b2bc2b411ad586ae5e07893cf1ae463b1655746f9a9711dfe06336ee55892b"
+            },
+            {
+              "file": "hf4-8.json",
+              "sha256": "c79996d6a3b52e0bed1510c44f6bb2c54feedd281549714ff26d716f11ec1047"
+            },
+            {
+              "file": "hf4-9.json",
+              "sha256": "6ab0d20bfd20f57907d1ea2f6dff2465230a0eb9f87507d0f71857f43c6a7d7e"
+            },
+            {
+              "file": "hf4-10.json",
+              "sha256": "834f0c7339ee85f4e07d0f82d8beb5eda27a08a29730b96f61bce5b099b3cb85"
+            }
+          ]
+        }
+      ],
+      "changedActionSeeds": [8, 10],
+      "changedFreeActionSeeds": [8, 10]
+    },
+    {
+      "arm": "hf4-no-curiosity",
+      "versions": [
+        {
+          "version": "tarball",
+          "medians": {
+            "cellsVisited": 34,
+            "kindEntropy": 2.0537426963441927,
+            "manipulationShare": 0.06388888888888888,
+            "idleShare": 0.3138888888888889,
+            "freeSpireObjects": 0,
+            "freeMaxStack": 1,
+            "repeatedPursuit": 0,
+            "taskScore": 0.5
+          },
+          "perSeed": [
+            {
+              "cellsVisited": 44,
+              "distinctActs": 15,
+              "kindEntropy": 2.00265378371851,
+              "repeatWithVariation": 0.5555555555555556,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.3,
+              "freeSpireObjects": 0,
+              "taskScore": 2,
+              "boredomMean0": 0.013607674062632396,
+              "boredomMean1": 0.035039423270966756,
+              "boredomMean2": 0.021872818322779226,
+              "manipulationShare": 0.03333333333333333,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 9,
+              "freeRememberedTargetMoves": 6,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.05837874701453698,
+              "boredomMin1": 0.02244859011192379,
+              "boredomMax1": 0.05182658797915304,
+              "boredomMin2": 0,
+              "boredomMax2": 0.039924566564699664,
+              "boredomMin3": 0,
+              "boredomMax3": 0.02408504452557454,
+              "boredomMean3": 0.005492406521349108,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 27,
+              "distinctActs": 14,
+              "kindEntropy": 2.0215841229956117,
+              "repeatWithVariation": 0.5555555555555556,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.3611111111111111,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.03251038912178228,
+              "boredomMean1": 0.19373370745472343,
+              "boredomMean2": 0.14451330670771959,
+              "manipulationShare": 0.03333333333333333,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 33,
+              "freeRememberedTargetMoves": 21,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.0721027366408368,
+              "boredomMin1": 0.0631059817039997,
+              "boredomMax1": 0.27345640284501394,
+              "boredomMin2": 0.11803777615141868,
+              "boredomMax2": 0.1733311974400046,
+              "boredomMin3": 0.05353561076168577,
+              "boredomMax3": 0.11652321766977139,
+              "boredomMean3": 0.08091574182526426,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 25,
+              "distinctActs": 16,
+              "kindEntropy": 2.010934214035657,
+              "repeatWithVariation": 0.4678362573099415,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.3277777777777778,
+              "freeSpireObjects": 0,
+              "taskScore": 2,
+              "boredomMean0": 0.00533692337520476,
+              "boredomMean1": 0.07846566298645787,
+              "boredomMean2": 0.06769081340963887,
+              "manipulationShare": 0.044444444444444446,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 14,
+              "freeRememberedTargetMoves": 10,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.08176932854012783,
+              "boredomMin1": 0.05073906503662516,
+              "boredomMax1": 0.12132292063237432,
+              "boredomMin2": 0.043214938474782076,
+              "boredomMax2": 0.094761317772302,
+              "boredomMin3": 0,
+              "boredomMax3": 0.0426604669950581,
+              "boredomMean3": 0.028977894355057997,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 41,
+              "distinctActs": 18,
+              "kindEntropy": 2.052046858371869,
+              "repeatWithVariation": 0.5789473684210527,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.3111111111111111,
+              "freeSpireObjects": 1,
+              "taskScore": 2,
+              "boredomMean0": 0.004472961740760421,
+              "boredomMean1": 0.05794593113769983,
+              "boredomMean2": 0.04107885058883921,
+              "manipulationShare": 0.06666666666666667,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 7,
+              "freeRememberedTargetMoves": 6,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.07303909106672306,
+              "boredomMin1": 0.03885594064771345,
+              "boredomMax1": 0.0767655583761644,
+              "boredomMin2": 0.026070359888262708,
+              "boredomMax2": 0.06091230279901647,
+              "boredomMin3": 0,
+              "boredomMax3": 0.025735870394661704,
+              "boredomMean3": 0.007585925084918002,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 36,
+              "distinctActs": 20,
+              "kindEntropy": 2.0958497060802395,
+              "repeatWithVariation": 0.5146198830409356,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.31666666666666665,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0,
+              "boredomMean1": 0.06651172884393663,
+              "boredomMean2": 0.1121535804332482,
+              "manipulationShare": 0.06666666666666667,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 7,
+              "freeRememberedTargetMoves": 7,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0,
+              "boredomMin1": 0,
+              "boredomMax1": 0.15090287141669742,
+              "boredomMin2": 0.0835412118958022,
+              "boredomMax2": 0.14624073592294273,
+              "boredomMin3": 0.03866534406393935,
+              "boredomMax3": 0.08316117060757715,
+              "boredomMean3": 0.0582407519348261,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 33,
+              "distinctActs": 22,
+              "kindEntropy": 2.0992679831945846,
+              "repeatWithVariation": 0.5847953216374269,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.19444444444444445,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0,
+              "boredomMean1": 0.01845463893716131,
+              "boredomMean2": 0.07742183762754216,
+              "manipulationShare": 0.1388888888888889,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 12,
+              "freeRememberedTargetMoves": 9,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0,
+              "boredomMin1": 0,
+              "boredomMax1": 0.12378736589132293,
+              "boredomMin2": 0.05035660401701572,
+              "boredomMax2": 0.11176085757558718,
+              "boredomMin3": 0.022843537730435553,
+              "boredomMax3": 0.04971061838378648,
+              "boredomMean3": 0.03467014750815404,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 34,
+              "distinctActs": 18,
+              "kindEntropy": 2.1357756295413592,
+              "repeatWithVariation": 0.5263157894736842,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.28888888888888886,
+              "freeSpireObjects": 1,
+              "taskScore": 0,
+              "boredomMean0": 0.06832397344184728,
+              "boredomMean1": 0.1201313070414132,
+              "boredomMean2": 0.077071277961759,
+              "manipulationShare": 0.07777777777777778,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 23,
+              "freeRememberedTargetMoves": 23,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.20757329198868993,
+              "boredomMin1": 0.08287753011836795,
+              "boredomMax1": 0.16985783236374227,
+              "boredomMin2": 0.050011514926394995,
+              "boredomMax2": 0.10989794399261801,
+              "boredomMin3": 0.022774143142539165,
+              "boredomMax3": 0.049369873613411816,
+              "boredomMean3": 0.03429710762419586,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 40,
+              "distinctActs": 18,
+              "kindEntropy": 2.0435703985367266,
+              "repeatWithVariation": 0.5146198830409356,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.29444444444444445,
+              "freeSpireObjects": 0,
+              "taskScore": 1,
+              "boredomMean0": 0.03322040185981372,
+              "boredomMean1": 0.09122555010671958,
+              "boredomMean2": 0.06639674113162372,
+              "manipulationShare": 0.05555555555555555,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 19,
+              "freeRememberedTargetMoves": 16,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.10727872645504069,
+              "boredomMin1": 0.06634866468219246,
+              "boredomMax1": 0.12316882896910945,
+              "boredomMin2": 0.04586554631825388,
+              "boredomMax2": 0.0876765592472215,
+              "boredomMin3": 0.020885987880817938,
+              "boredomMax3": 0.045277092796794455,
+              "boredomMean3": 0.03139928855851711,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 30,
+              "distinctActs": 18,
+              "kindEntropy": 2.0554385343165165,
+              "repeatWithVariation": 0.6198830409356725,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.3333333333333333,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.0912333554081849,
+              "boredomMean1": 0.07939486753726605,
+              "boredomMean2": 0.04414400192567696,
+              "manipulationShare": 0.06111111111111111,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 6,
+              "freeRememberedTargetMoves": 5,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.17792994921655433,
+              "boredomMin1": 0.052997247355910354,
+              "boredomMax1": 0.1160679237391154,
+              "boredomMin2": 0.0282758909225677,
+              "boredomMax2": 0.06580819346723124,
+              "boredomMin3": 0,
+              "boredomMax3": 0.027913092911907165,
+              "boredomMean3": 0.01032688302498736,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 34,
+              "distinctActs": 16,
+              "kindEntropy": 2.1126999860838147,
+              "repeatWithVariation": 0.5380116959064327,
+              "maxStack": 4,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.31666666666666665,
+              "freeSpireObjects": 0,
+              "taskScore": 4,
+              "boredomMean0": 0.04192618051800477,
+              "boredomMean1": 0.03840844600733229,
+              "boredomMean2": 0.03017513743181066,
+              "manipulationShare": 0.06666666666666667,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 4,
+              "freeRememberedTargetMoves": 4,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.08240652246505194,
+              "boredomMin1": 0.02498961651133301,
+              "boredomMax1": 0.05484755019684511,
+              "boredomMin2": 0,
+              "boredomMax2": 0.04564119969960872,
+              "boredomMin3": 0,
+              "boredomMax3": 0,
+              "boredomMean3": 0,
+              "repeatedPursuit": 1
+            }
+          ],
+          "tests": [
+            {
+              "metric": "cellsVisited",
+              "p": 0.09757734525536384,
+              "holm": 0.585464071532183
+            },
+            {
+              "metric": "kindEntropy",
+              "p": 0.1366667388339215,
+              "holm": 0.6833336941696075
+            },
+            {
+              "metric": "manipulationShare",
+              "p": 0.25304726233518804,
+              "holm": 1
+            },
+            {
+              "metric": "idleShare",
+              "p": 0.0002165017644893806,
+              "holm": 0.0017320141159150447
+            },
+            {
+              "metric": "freeSpireObjects",
+              "p": 0.47368421052631576,
+              "holm": 1
+            },
+            {
+              "metric": "freeMaxStack",
+              "p": 1,
+              "holm": 1
+            },
+            {
+              "metric": "repeatedPursuit",
+              "p": 1,
+              "holm": 1
+            },
+            {
+              "metric": "taskScore",
+              "p": 0.032507739938080496,
+              "holm": 0.22755417956656349
+            }
+          ],
+          "taskCubes": [2, 0, 2, 2, 0, 0, 0, 1, 0, 4],
+          "taskRouteCounts": [33, 54, 31, 37, 39, 36, 45, 48, 37, 44],
+          "freeRouteCounts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          "maxTaskRoute": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          "curiosity": [
+            {
+              "seed": 1,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 2,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 3,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 4,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 5,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 6,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 7,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 8,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 9,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 10,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            }
+          ],
+          "recordingHashes": [
+            {
+              "file": "hf4-no-curiosity-1.json",
+              "sha256": "947511df7fbc96f5074f0a6643251d0039b838417240b4372fa0812d4a677a3f"
+            },
+            {
+              "file": "hf4-no-curiosity-2.json",
+              "sha256": "056392f57dd748220c543ed6a13a200d0644a03e00de8045911f60ee5b07931a"
+            },
+            {
+              "file": "hf4-no-curiosity-3.json",
+              "sha256": "52884c8e546dd9058115231cbe5c9c9a178b2aaa82c1f1dae986e024b430696c"
+            },
+            {
+              "file": "hf4-no-curiosity-4.json",
+              "sha256": "9c49dc37c471bee937e7605cfa43d21bdf0e00737e647d86babf6c6ded392b45"
+            },
+            {
+              "file": "hf4-no-curiosity-5.json",
+              "sha256": "4419a2d0bf7fd7fe8bfab13b75659d1aebbb6c814dfa65b159b29ed2e81da4d4"
+            },
+            {
+              "file": "hf4-no-curiosity-6.json",
+              "sha256": "38bdbf003096a08f37ec2ef20b8c06303ab83d8e3f0f5a9e7800ecf6bcf0afe6"
+            },
+            {
+              "file": "hf4-no-curiosity-7.json",
+              "sha256": "baa51808860c0144cce09d6d72c944cb2a23ae13293530ae421dd196c0d64211"
+            },
+            {
+              "file": "hf4-no-curiosity-8.json",
+              "sha256": "750ec4f71c7394e090eae5545238d65ecc8fd12eb599a173e6f18dbe49b8c309"
+            },
+            {
+              "file": "hf4-no-curiosity-9.json",
+              "sha256": "15eb37cf5a712ba4309df88c612d04bdc2b52604e5dac70a5840844508d9ffe2"
+            },
+            {
+              "file": "hf4-no-curiosity-10.json",
+              "sha256": "f420ea5d8b941ce94a8faabb1e35b48b325d4ab3cd72c265b7ec87df7efc610e"
+            }
+          ]
+        },
+        {
+          "version": "2.12.0",
+          "medians": {
+            "cellsVisited": 34,
+            "kindEntropy": 2.0537426963441927,
+            "manipulationShare": 0.06388888888888888,
+            "idleShare": 0.3138888888888889,
+            "freeSpireObjects": 0,
+            "freeMaxStack": 1,
+            "repeatedPursuit": 0,
+            "taskScore": 0.5
+          },
+          "perSeed": [
+            {
+              "cellsVisited": 44,
+              "distinctActs": 15,
+              "kindEntropy": 2.00265378371851,
+              "repeatWithVariation": 0.5555555555555556,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.3,
+              "freeSpireObjects": 0,
+              "taskScore": 2,
+              "boredomMean0": 0.013607674062632396,
+              "boredomMean1": 0.035039423270966756,
+              "boredomMean2": 0.021872818322779226,
+              "manipulationShare": 0.03333333333333333,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 9,
+              "freeRememberedTargetMoves": 6,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.05837874701453698,
+              "boredomMin1": 0.02244859011192379,
+              "boredomMax1": 0.05182658797915304,
+              "boredomMin2": 0,
+              "boredomMax2": 0.039924566564699664,
+              "boredomMin3": 0,
+              "boredomMax3": 0.02408504452557454,
+              "boredomMean3": 0.005492406521349108,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 27,
+              "distinctActs": 14,
+              "kindEntropy": 2.0215841229956117,
+              "repeatWithVariation": 0.5555555555555556,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.3611111111111111,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.03251038912178228,
+              "boredomMean1": 0.19373370745472343,
+              "boredomMean2": 0.14451330670771959,
+              "manipulationShare": 0.03333333333333333,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 33,
+              "freeRememberedTargetMoves": 21,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.0721027366408368,
+              "boredomMin1": 0.0631059817039997,
+              "boredomMax1": 0.27345640284501394,
+              "boredomMin2": 0.11803777615141868,
+              "boredomMax2": 0.1733311974400046,
+              "boredomMin3": 0.05353561076168577,
+              "boredomMax3": 0.11652321766977139,
+              "boredomMean3": 0.08091574182526426,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 25,
+              "distinctActs": 16,
+              "kindEntropy": 2.010934214035657,
+              "repeatWithVariation": 0.4678362573099415,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.3277777777777778,
+              "freeSpireObjects": 0,
+              "taskScore": 2,
+              "boredomMean0": 0.00533692337520476,
+              "boredomMean1": 0.07846566298645787,
+              "boredomMean2": 0.06769081340963887,
+              "manipulationShare": 0.044444444444444446,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 14,
+              "freeRememberedTargetMoves": 10,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.08176932854012783,
+              "boredomMin1": 0.05073906503662516,
+              "boredomMax1": 0.12132292063237432,
+              "boredomMin2": 0.043214938474782076,
+              "boredomMax2": 0.094761317772302,
+              "boredomMin3": 0,
+              "boredomMax3": 0.0426604669950581,
+              "boredomMean3": 0.028977894355057997,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 41,
+              "distinctActs": 18,
+              "kindEntropy": 2.052046858371869,
+              "repeatWithVariation": 0.5789473684210527,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.3111111111111111,
+              "freeSpireObjects": 1,
+              "taskScore": 2,
+              "boredomMean0": 0.004472961740760421,
+              "boredomMean1": 0.05794593113769983,
+              "boredomMean2": 0.04107885058883921,
+              "manipulationShare": 0.06666666666666667,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 7,
+              "freeRememberedTargetMoves": 6,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.07303909106672306,
+              "boredomMin1": 0.03885594064771345,
+              "boredomMax1": 0.0767655583761644,
+              "boredomMin2": 0.026070359888262708,
+              "boredomMax2": 0.06091230279901647,
+              "boredomMin3": 0,
+              "boredomMax3": 0.025735870394661704,
+              "boredomMean3": 0.007585925084918002,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 36,
+              "distinctActs": 20,
+              "kindEntropy": 2.0958497060802395,
+              "repeatWithVariation": 0.5146198830409356,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.31666666666666665,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0,
+              "boredomMean1": 0.06651172884393663,
+              "boredomMean2": 0.1121535804332482,
+              "manipulationShare": 0.06666666666666667,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 7,
+              "freeRememberedTargetMoves": 7,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0,
+              "boredomMin1": 0,
+              "boredomMax1": 0.15090287141669742,
+              "boredomMin2": 0.0835412118958022,
+              "boredomMax2": 0.14624073592294273,
+              "boredomMin3": 0.03866534406393935,
+              "boredomMax3": 0.08316117060757715,
+              "boredomMean3": 0.0582407519348261,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 33,
+              "distinctActs": 22,
+              "kindEntropy": 2.0992679831945846,
+              "repeatWithVariation": 0.5847953216374269,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.19444444444444445,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0,
+              "boredomMean1": 0.01845463893716131,
+              "boredomMean2": 0.07742183762754216,
+              "manipulationShare": 0.1388888888888889,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 12,
+              "freeRememberedTargetMoves": 9,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0,
+              "boredomMin1": 0,
+              "boredomMax1": 0.12378736589132293,
+              "boredomMin2": 0.05035660401701572,
+              "boredomMax2": 0.11176085757558718,
+              "boredomMin3": 0.022843537730435553,
+              "boredomMax3": 0.04971061838378648,
+              "boredomMean3": 0.03467014750815404,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 34,
+              "distinctActs": 18,
+              "kindEntropy": 2.1357756295413592,
+              "repeatWithVariation": 0.5263157894736842,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.28888888888888886,
+              "freeSpireObjects": 1,
+              "taskScore": 0,
+              "boredomMean0": 0.06832397344184728,
+              "boredomMean1": 0.1201313070414132,
+              "boredomMean2": 0.077071277961759,
+              "manipulationShare": 0.07777777777777778,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 23,
+              "freeRememberedTargetMoves": 23,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.20757329198868993,
+              "boredomMin1": 0.08287753011836795,
+              "boredomMax1": 0.16985783236374227,
+              "boredomMin2": 0.050011514926394995,
+              "boredomMax2": 0.10989794399261801,
+              "boredomMin3": 0.022774143142539165,
+              "boredomMax3": 0.049369873613411816,
+              "boredomMean3": 0.03429710762419586,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 40,
+              "distinctActs": 18,
+              "kindEntropy": 2.0435703985367266,
+              "repeatWithVariation": 0.5146198830409356,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.29444444444444445,
+              "freeSpireObjects": 0,
+              "taskScore": 1,
+              "boredomMean0": 0.03322040185981372,
+              "boredomMean1": 0.09122555010671958,
+              "boredomMean2": 0.06639674113162372,
+              "manipulationShare": 0.05555555555555555,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 19,
+              "freeRememberedTargetMoves": 16,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.10727872645504069,
+              "boredomMin1": 0.06634866468219246,
+              "boredomMax1": 0.12316882896910945,
+              "boredomMin2": 0.04586554631825388,
+              "boredomMax2": 0.0876765592472215,
+              "boredomMin3": 0.020885987880817938,
+              "boredomMax3": 0.045277092796794455,
+              "boredomMean3": 0.03139928855851711,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 30,
+              "distinctActs": 18,
+              "kindEntropy": 2.0554385343165165,
+              "repeatWithVariation": 0.6198830409356725,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.3333333333333333,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.0912333554081849,
+              "boredomMean1": 0.07939486753726605,
+              "boredomMean2": 0.04414400192567696,
+              "manipulationShare": 0.06111111111111111,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 6,
+              "freeRememberedTargetMoves": 5,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.17792994921655433,
+              "boredomMin1": 0.052997247355910354,
+              "boredomMax1": 0.1160679237391154,
+              "boredomMin2": 0.0282758909225677,
+              "boredomMax2": 0.06580819346723124,
+              "boredomMin3": 0,
+              "boredomMax3": 0.027913092911907165,
+              "boredomMean3": 0.01032688302498736,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 34,
+              "distinctActs": 16,
+              "kindEntropy": 2.1126999860838147,
+              "repeatWithVariation": 0.5380116959064327,
+              "maxStack": 4,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.31666666666666665,
+              "freeSpireObjects": 0,
+              "taskScore": 4,
+              "boredomMean0": 0.04192618051800477,
+              "boredomMean1": 0.03840844600733229,
+              "boredomMean2": 0.03017513743181066,
+              "manipulationShare": 0.06666666666666667,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 4,
+              "freeRememberedTargetMoves": 4,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.08240652246505194,
+              "boredomMin1": 0.02498961651133301,
+              "boredomMax1": 0.05484755019684511,
+              "boredomMin2": 0,
+              "boredomMax2": 0.04564119969960872,
+              "boredomMin3": 0,
+              "boredomMax3": 0,
+              "boredomMean3": 0,
+              "repeatedPursuit": 1
+            }
+          ],
+          "tests": [
+            {
+              "metric": "cellsVisited",
+              "p": 0.09757734525536384,
+              "holm": 0.585464071532183
+            },
+            {
+              "metric": "kindEntropy",
+              "p": 0.1366667388339215,
+              "holm": 0.6833336941696075
+            },
+            {
+              "metric": "manipulationShare",
+              "p": 0.25304726233518804,
+              "holm": 1
+            },
+            {
+              "metric": "idleShare",
+              "p": 0.0002165017644893806,
+              "holm": 0.0017320141159150447
+            },
+            {
+              "metric": "freeSpireObjects",
+              "p": 0.47368421052631576,
+              "holm": 1
+            },
+            {
+              "metric": "freeMaxStack",
+              "p": 1,
+              "holm": 1
+            },
+            {
+              "metric": "repeatedPursuit",
+              "p": 1,
+              "holm": 1
+            },
+            {
+              "metric": "taskScore",
+              "p": 0.032507739938080496,
+              "holm": 0.22755417956656349
+            }
+          ],
+          "taskCubes": [2, 0, 2, 2, 0, 0, 0, 1, 0, 4],
+          "taskRouteCounts": [33, 54, 31, 37, 39, 36, 45, 48, 37, 44],
+          "freeRouteCounts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          "maxTaskRoute": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          "curiosity": [
+            {
+              "seed": 1,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 2,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 3,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 4,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 5,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 6,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 7,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 8,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 9,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            },
+            {
+              "seed": 10,
+              "freePositive": 0,
+              "taskPositive": 0,
+              "terms": []
+            }
+          ],
+          "recordingHashes": [
+            {
+              "file": "hf4-no-curiosity-1.json",
+              "sha256": "95f7af977623645f72dce8132a9c0890d5aee40d90625ac413bfda8e6f5973f4"
+            },
+            {
+              "file": "hf4-no-curiosity-2.json",
+              "sha256": "40966b3347850ad6ff4d8f90a88ccb5ac14369ff606d15c1e1d839f9daddb663"
+            },
+            {
+              "file": "hf4-no-curiosity-3.json",
+              "sha256": "05eb10ddf6ea696efde3cbda9723142ef1e83dc632c204a1acb9481c08939747"
+            },
+            {
+              "file": "hf4-no-curiosity-4.json",
+              "sha256": "8c86f3109e0b48db77b12743462d53d8508b79d951ce87d9001d5860810f531e"
+            },
+            {
+              "file": "hf4-no-curiosity-5.json",
+              "sha256": "a49b2a97b6f4ac956b6a588ee4171f610acd2447fc80d7875a3f1c347803040a"
+            },
+            {
+              "file": "hf4-no-curiosity-6.json",
+              "sha256": "d405e82956811136a73f0baf328bfd467c00f04785b4efc17a1574532d82c225"
+            },
+            {
+              "file": "hf4-no-curiosity-7.json",
+              "sha256": "a0f07f81365b27c66a68575d15c0dccc643408e2f6c3a2382c2d02463ed366c4"
+            },
+            {
+              "file": "hf4-no-curiosity-8.json",
+              "sha256": "863237abed5a3e2e0bbcf58c02a637494813bc9251c2ce8f49e1061c6d47cee1"
+            },
+            {
+              "file": "hf4-no-curiosity-9.json",
+              "sha256": "035dd4a27e0f8360743dd50b0e2c673a4eea54a59f51e3a4424a636a79543292"
+            },
+            {
+              "file": "hf4-no-curiosity-10.json",
+              "sha256": "8896136f3f64ff622d9f71baf3e0e7ea246aabebf45f780557d853151535f64b"
+            }
+          ]
+        }
+      ],
+      "changedActionSeeds": [],
+      "changedFreeActionSeeds": []
+    },
+    {
+      "arm": "hf4-no-planning",
+      "versions": [
+        {
+          "version": "tarball",
+          "medians": {
+            "cellsVisited": 27.5,
+            "kindEntropy": 2.2522483264484343,
+            "manipulationShare": 0.10555555555555556,
+            "idleShare": 0.22777777777777777,
+            "freeSpireObjects": 0,
+            "freeMaxStack": 1,
+            "repeatedPursuit": 0,
+            "taskScore": 0
+          },
+          "perSeed": [
+            {
+              "cellsVisited": 30,
+              "distinctActs": 15,
+              "kindEntropy": 2.084584221659979,
+              "repeatWithVariation": 0.5847953216374269,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.22777777777777777,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.07740494406731396,
+              "boredomMean1": 0.06313805859190792,
+              "boredomMean2": 0.025796980552836857,
+              "manipulationShare": 0.05555555555555555,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 26,
+              "freeRememberedTargetMoves": 18,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.1396653984092755,
+              "boredomMin1": 0.04176534069503006,
+              "boredomMax1": 0.08997302914767728,
+              "boredomMin2": 0,
+              "boredomMax2": 0.04122959002238867,
+              "boredomMin3": 0,
+              "boredomMax3": 0,
+              "boredomMean3": 0,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 42,
+              "distinctActs": 16,
+              "kindEntropy": 2.1233558220428437,
+              "repeatWithVariation": 0.6140350877192983,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.22777777777777777,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0,
+              "boredomMean1": 0.07025343882061508,
+              "boredomMean2": 0.0730793384362208,
+              "manipulationShare": 0.06666666666666667,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 32,
+              "freeRememberedTargetMoves": 31,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0,
+              "boredomMin1": 0,
+              "boredomMax1": 0.11650722596094627,
+              "boredomMin2": 0.051886661751938665,
+              "boredomMax2": 0.10250911203655384,
+              "boredomMin3": 0.023536666418261777,
+              "boredomMax3": 0.051221017966913064,
+              "boredomMean3": 0.03566593153897248,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 22,
+              "distinctActs": 19,
+              "kindEntropy": 2.2118561412946875,
+              "repeatWithVariation": 0.5906432748538012,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.22777777777777777,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.0494762359543945,
+              "boredomMean1": 0.12795116153395072,
+              "boredomMean2": 0.08564243982872265,
+              "manipulationShare": 0.08888888888888889,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 20,
+              "freeRememberedTargetMoves": 15,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.18309749569109968,
+              "boredomMin1": 0.0954694946960339,
+              "boredomMax1": 0.1579298439605984,
+              "boredomMin2": 0.060227922669561916,
+              "boredomMax2": 0.12164086304425228,
+              "boredomMin3": 0.03424615560350512,
+              "boredomMax3": 0.07571486313694746,
+              "boredomMean3": 0.051925173048421626,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 29,
+              "distinctActs": 22,
+              "kindEntropy": 2.377779820598103,
+              "repeatWithVariation": 0.5380116959064327,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.21666666666666667,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0,
+              "boredomMean1": 0,
+              "boredomMean2": 0.09015174114849014,
+              "manipulationShare": 0.16111111111111112,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 30,
+              "freeRememberedTargetMoves": 11,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0,
+              "boredomMin1": 0,
+              "boredomMax1": 0,
+              "boredomMin2": 0,
+              "boredomMax2": 0.195549994581543,
+              "boredomMin3": 0.08255694740333352,
+              "boredomMax3": 0.1604817863339613,
+              "boredomMean3": 0.11681091476737052,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 26,
+              "distinctActs": 22,
+              "kindEntropy": 2.4532717189431827,
+              "repeatWithVariation": 0.4152046783625731,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.23333333333333334,
+              "freeSpireObjects": 0,
+              "taskScore": 1,
+              "boredomMean0": 0.15190598702184926,
+              "boredomMean1": 0.39123274657582574,
+              "boredomMean2": 0.17367252036518496,
+              "manipulationShare": 0.18888888888888888,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 19,
+              "freeRememberedTargetMoves": 16,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.537219710221146,
+              "boredomMin1": 0.2550668437956327,
+              "boredomMax1": 0.5566137212202864,
+              "boredomMin2": 0.11211371812741006,
+              "boredomMax2": 0.2517949138763527,
+              "boredomMin3": 0.0504557538707133,
+              "boredomMax3": 0.11067542238688452,
+              "boredomMean3": 0.076312280851778,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 19,
+              "distinctActs": 18,
+              "kindEntropy": 2.3747353732296164,
+              "repeatWithVariation": 0.4093567251461988,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.22777777777777777,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.08062912749573088,
+              "boredomMean1": 0.1655345599506538,
+              "boredomMean2": 0.08039232316251933,
+              "manipulationShare": 0.14444444444444443,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 34,
+              "freeRememberedTargetMoves": 20,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.2603524396392473,
+              "boredomMin1": 0.11880004431263691,
+              "boredomMax1": 0.22616465118139434,
+              "boredomMin2": 0.051808169334169124,
+              "boredomMax2": 0.11727614342384972,
+              "boredomMin3": 0.023687274979018954,
+              "boredomMax3": 0.051143532512943006,
+              "boredomMean3": 0.035599256497674515,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 43,
+              "distinctActs": 19,
+              "kindEntropy": 2.2442188247142796,
+              "repeatWithVariation": 0.5321637426900585,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.19444444444444445,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.04119488401276684,
+              "boredomMean1": 0.024680991035516634,
+              "boredomMean2": 0.031115471159522474,
+              "manipulationShare": 0.12222222222222222,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 7,
+              "freeRememberedTargetMoves": 2,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.07402761626391015,
+              "boredomMin1": 0,
+              "boredomMax1": 0.040326704271971534,
+              "boredomMin2": 0,
+              "boredomMax2": 0.04474887124345866,
+              "boredomMin3": 0,
+              "boredomMax3": 0.022108876561295156,
+              "boredomMean3": 0.002818837209820164,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 25,
+              "distinctActs": 18,
+              "kindEntropy": 2.2602778281825895,
+              "repeatWithVariation": 0.5497076023391813,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.24444444444444444,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.053441491679418154,
+              "boredomMean1": 0.14315153377423423,
+              "boredomMean2": 0.105056651762941,
+              "manipulationShare": 0.1,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 15,
+              "freeRememberedTargetMoves": 8,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.09853966791290618,
+              "boredomMin1": 0.04538655411738069,
+              "boredomMax1": 0.24406676515444772,
+              "boredomMin2": 0.07009955378096842,
+              "boredomMax2": 0.1485779152824465,
+              "boredomMin3": 0.03167211521638679,
+              "boredomMax3": 0.0692002399624531,
+              "boredomMean3": 0.04780751820400269,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 26,
+              "distinctActs": 17,
+              "kindEntropy": 2.2638916011252608,
+              "repeatWithVariation": 0.5847953216374269,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.2388888888888889,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0,
+              "boredomMean1": 0.29438431170472174,
+              "boredomMean2": 0.16617281554957847,
+              "manipulationShare": 0.1111111111111111,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 10,
+              "freeRememberedTargetMoves": 6,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0,
+              "boredomMin1": 0,
+              "boredomMax1": 0.4055856055920524,
+              "boredomMin2": 0.10587698861759925,
+              "boredomMax2": 0.24540923497567846,
+              "boredomMin3": 0.04802654766943032,
+              "boredomMax3": 0.10451869297832922,
+              "boredomMean3": 0.07231049644060626,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 37,
+              "distinctActs": 16,
+              "kindEntropy": 2.0805866856436945,
+              "repeatWithVariation": 0.6023391812865497,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.18888888888888888,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.01141251380314236,
+              "boredomMean1": 0.022764581229665508,
+              "boredomMean2": 0.07275790563665517,
+              "manipulationShare": 0.07777777777777778,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 22,
+              "freeRememberedTargetMoves": 18,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.04037849654382814,
+              "boredomMin1": 0,
+              "boredomMax1": 0.10664344441208867,
+              "boredomMin2": 0.05482161425449553,
+              "boredomMax2": 0.10218819386977959,
+              "boredomMin3": 0.024095762671046458,
+              "boredomMax3": 0.054118355808427956,
+              "boredomMean3": 0.037183944068072225,
+              "repeatedPursuit": 0
+            }
+          ],
+          "tests": [
+            {
+              "metric": "cellsVisited",
+              "p": 0.019117105804412306,
+              "holm": 0.11470263482647383
+            },
+            {
+              "metric": "kindEntropy",
+              "p": 0.0004330035289787612,
+              "holm": 0.0034640282318300895
+            },
+            {
+              "metric": "manipulationShare",
+              "p": 0.0014938621749767261,
+              "holm": 0.010457035224837083
+            },
+            {
+              "metric": "idleShare",
+              "p": 0.5439823334560177,
+              "holm": 1
+            },
+            {
+              "metric": "freeSpireObjects",
+              "p": 1,
+              "holm": 1
+            },
+            {
+              "metric": "freeMaxStack",
+              "p": 1,
+              "holm": 1
+            },
+            {
+              "metric": "repeatedPursuit",
+              "p": 1,
+              "holm": 1
+            },
+            {
+              "metric": "taskScore",
+              "p": 1,
+              "holm": 1
+            }
+          ],
+          "taskCubes": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+          "taskRouteCounts": [0, 0, 0, 0, 8, 0, 0, 0, 0, 0],
+          "freeRouteCounts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          "maxTaskRoute": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+          "curiosity": [
+            {
+              "seed": 1,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 2,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 3,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 4,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 5,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 6,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 7,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 8,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 9,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 10,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            }
+          ],
+          "recordingHashes": [
+            {
+              "file": "hf4-no-planning-1.json",
+              "sha256": "c584b334cf936c2e8095f6af67f12806d9ea2cc59aa2dad96f2c5de20acfd2a4"
+            },
+            {
+              "file": "hf4-no-planning-2.json",
+              "sha256": "8dabfee6f479665f605d870a92f81e0fe645931f63a4c3569e633d08bf0b0814"
+            },
+            {
+              "file": "hf4-no-planning-3.json",
+              "sha256": "f3c0b8d88246e8bd700c38ca51c8fd261125168c980d523bf3b51f88e30f54fa"
+            },
+            {
+              "file": "hf4-no-planning-4.json",
+              "sha256": "c061b628302158f53cf1ac279c09171d986c3846b8a2a390b4d78e1f4227da7f"
+            },
+            {
+              "file": "hf4-no-planning-5.json",
+              "sha256": "06505c754cef373e25fc9be7600bd16ea4c4593fb651a2d938050355af3c71e6"
+            },
+            {
+              "file": "hf4-no-planning-6.json",
+              "sha256": "ab5cd20e6a2731eded315a2ff0d63bde04a839aca866849501cb239646d25b01"
+            },
+            {
+              "file": "hf4-no-planning-7.json",
+              "sha256": "725d2834131f5c52c13e1ee8acceea0d5626a3fd7fb07b6fe534e974f71eb1f0"
+            },
+            {
+              "file": "hf4-no-planning-8.json",
+              "sha256": "ae3035f6297ef4c65cc5c67e3a8afe7ee2e5f6131ab8292ee1b7cb78278f0de9"
+            },
+            {
+              "file": "hf4-no-planning-9.json",
+              "sha256": "b298b9de1397adc83086942dec76ec02ba39c75a8402633f7f93d79adc402caf"
+            },
+            {
+              "file": "hf4-no-planning-10.json",
+              "sha256": "1a51d92c13317f5e99008b1284264e4197bc0e06e43938c71b0715e7838d9ddb"
+            }
+          ]
+        },
+        {
+          "version": "2.12.0",
+          "medians": {
+            "cellsVisited": 29.5,
+            "kindEntropy": 2.25405521291977,
+            "manipulationShare": 0.11666666666666667,
+            "idleShare": 0.22777777777777777,
+            "freeSpireObjects": 0,
+            "freeMaxStack": 1,
+            "repeatedPursuit": 0,
+            "taskScore": 0
+          },
+          "perSeed": [
+            {
+              "cellsVisited": 30,
+              "distinctActs": 15,
+              "kindEntropy": 2.084584221659979,
+              "repeatWithVariation": 0.5847953216374269,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.22777777777777777,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.07740494406731396,
+              "boredomMean1": 0.06313805859190792,
+              "boredomMean2": 0.025796980552836857,
+              "manipulationShare": 0.05555555555555555,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 26,
+              "freeRememberedTargetMoves": 18,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.1396653984092755,
+              "boredomMin1": 0.04176534069503006,
+              "boredomMax1": 0.08997302914767728,
+              "boredomMin2": 0,
+              "boredomMax2": 0.04122959002238867,
+              "boredomMin3": 0,
+              "boredomMax3": 0,
+              "boredomMean3": 0,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 42,
+              "distinctActs": 16,
+              "kindEntropy": 2.1233558220428437,
+              "repeatWithVariation": 0.6140350877192983,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.22777777777777777,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0,
+              "boredomMean1": 0.07025343882061508,
+              "boredomMean2": 0.0730793384362208,
+              "manipulationShare": 0.06666666666666667,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 32,
+              "freeRememberedTargetMoves": 31,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0,
+              "boredomMin1": 0,
+              "boredomMax1": 0.11650722596094627,
+              "boredomMin2": 0.051886661751938665,
+              "boredomMax2": 0.10250911203655384,
+              "boredomMin3": 0.023536666418261777,
+              "boredomMax3": 0.051221017966913064,
+              "boredomMean3": 0.03566593153897248,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 22,
+              "distinctActs": 19,
+              "kindEntropy": 2.2118561412946875,
+              "repeatWithVariation": 0.5906432748538012,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.22777777777777777,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.0494762359543945,
+              "boredomMean1": 0.12795116153395072,
+              "boredomMean2": 0.08564243982872265,
+              "manipulationShare": 0.08888888888888889,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 20,
+              "freeRememberedTargetMoves": 15,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.18309749569109968,
+              "boredomMin1": 0.0954694946960339,
+              "boredomMax1": 0.1579298439605984,
+              "boredomMin2": 0.060227922669561916,
+              "boredomMax2": 0.12164086304425228,
+              "boredomMin3": 0.03424615560350512,
+              "boredomMax3": 0.07571486313694746,
+              "boredomMean3": 0.051925173048421626,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 29,
+              "distinctActs": 22,
+              "kindEntropy": 2.377779820598103,
+              "repeatWithVariation": 0.5380116959064327,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.21666666666666667,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0,
+              "boredomMean1": 0,
+              "boredomMean2": 0.09015174114849014,
+              "manipulationShare": 0.16111111111111112,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 30,
+              "freeRememberedTargetMoves": 11,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0,
+              "boredomMin1": 0,
+              "boredomMax1": 0,
+              "boredomMin2": 0,
+              "boredomMax2": 0.195549994581543,
+              "boredomMin3": 0.08255694740333352,
+              "boredomMax3": 0.1604817863339613,
+              "boredomMean3": 0.11681091476737052,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 26,
+              "distinctActs": 22,
+              "kindEntropy": 2.4532717189431827,
+              "repeatWithVariation": 0.4152046783625731,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.23333333333333334,
+              "freeSpireObjects": 0,
+              "taskScore": 1,
+              "boredomMean0": 0.15190598702184926,
+              "boredomMean1": 0.39123274657582574,
+              "boredomMean2": 0.17367252036518496,
+              "manipulationShare": 0.18888888888888888,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 19,
+              "freeRememberedTargetMoves": 16,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.537219710221146,
+              "boredomMin1": 0.2550668437956327,
+              "boredomMax1": 0.5566137212202864,
+              "boredomMin2": 0.11211371812741006,
+              "boredomMax2": 0.2517949138763527,
+              "boredomMin3": 0.0504557538707133,
+              "boredomMax3": 0.11067542238688452,
+              "boredomMean3": 0.076312280851778,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 19,
+              "distinctActs": 18,
+              "kindEntropy": 2.3747353732296164,
+              "repeatWithVariation": 0.4093567251461988,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.22777777777777777,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.08062912749573088,
+              "boredomMean1": 0.1655345599506538,
+              "boredomMean2": 0.08039232316251933,
+              "manipulationShare": 0.14444444444444443,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 34,
+              "freeRememberedTargetMoves": 20,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.2603524396392473,
+              "boredomMin1": 0.11880004431263691,
+              "boredomMax1": 0.22616465118139434,
+              "boredomMin2": 0.051808169334169124,
+              "boredomMax2": 0.11727614342384972,
+              "boredomMin3": 0.023687274979018954,
+              "boredomMax3": 0.051143532512943006,
+              "boredomMean3": 0.035599256497674515,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 43,
+              "distinctActs": 19,
+              "kindEntropy": 2.2442188247142796,
+              "repeatWithVariation": 0.5321637426900585,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.19444444444444445,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.04119488401276684,
+              "boredomMean1": 0.024680991035516634,
+              "boredomMean2": 0.031115471159522474,
+              "manipulationShare": 0.12222222222222222,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 7,
+              "freeRememberedTargetMoves": 2,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.07402761626391015,
+              "boredomMin1": 0,
+              "boredomMax1": 0.040326704271971534,
+              "boredomMin2": 0,
+              "boredomMax2": 0.04474887124345866,
+              "boredomMin3": 0,
+              "boredomMax3": 0.022108876561295156,
+              "boredomMean3": 0.002818837209820164,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 39,
+              "distinctActs": 20,
+              "kindEntropy": 2.2850682286058044,
+              "repeatWithVariation": 0.5263157894736842,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.19444444444444445,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.05349757632907772,
+              "boredomMean1": 0.08477409133555641,
+              "boredomMean2": 0.07179799253357437,
+              "manipulationShare": 0.1388888888888889,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 6,
+              "freeRememberedTargetMoves": 6,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.09853966791290618,
+              "boredomMin1": 0.04515941544584856,
+              "boredomMax1": 0.1276482697662325,
+              "boredomMin2": 0.04970442403539604,
+              "boredomMax2": 0.09705881598437464,
+              "boredomMin3": 0.021760079002637402,
+              "boredomMax3": 0.049066804710948535,
+              "boredomMean3": 0.03338421597754449,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 26,
+              "distinctActs": 17,
+              "kindEntropy": 2.2638916011252608,
+              "repeatWithVariation": 0.5847953216374269,
+              "maxStack": 2,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.2388888888888889,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0,
+              "boredomMean1": 0.29438431170472174,
+              "boredomMean2": 0.16617281554957847,
+              "manipulationShare": 0.1111111111111111,
+              "freeMaxStack": 2,
+              "rememberedTargetMoves": 10,
+              "freeRememberedTargetMoves": 6,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0,
+              "boredomMin1": 0,
+              "boredomMax1": 0.4055856055920524,
+              "boredomMin2": 0.10587698861759925,
+              "boredomMax2": 0.24540923497567846,
+              "boredomMin3": 0.04802654766943032,
+              "boredomMax3": 0.10451869297832922,
+              "boredomMean3": 0.07231049644060626,
+              "repeatedPursuit": 0
+            },
+            {
+              "cellsVisited": 31,
+              "distinctActs": 16,
+              "kindEntropy": 2.058845933713752,
+              "repeatWithVariation": 0.631578947368421,
+              "maxStack": 1,
+              "ringGlows": 0,
+              "rockCubes": 0,
+              "idleShare": 0.20555555555555555,
+              "freeSpireObjects": 0,
+              "taskScore": 0,
+              "boredomMean0": 0.01141251380314236,
+              "boredomMean1": 0.022764581229665508,
+              "boredomMean2": 0.07019434753128834,
+              "manipulationShare": 0.06666666666666667,
+              "freeMaxStack": 1,
+              "rememberedTargetMoves": 29,
+              "freeRememberedTargetMoves": 18,
+              "goalsProposed": 0,
+              "goalsAdopted": 1,
+              "freeGoalsProposed": 0,
+              "freeGoalsAdopted": 0,
+              "boredomMin0": 0,
+              "boredomMax0": 0.04037849654382814,
+              "boredomMin1": 0,
+              "boredomMax1": 0.10664344441208867,
+              "boredomMin2": 0.04550133883259173,
+              "boredomMax2": 0.10218819386977959,
+              "boredomMin3": 0.022439562525573515,
+              "boredomMax3": 0.044917628775156475,
+              "boredomMean3": 0.03193711182487386,
+              "repeatedPursuit": 0
+            }
+          ],
+          "tests": [
+            {
+              "metric": "cellsVisited",
+              "p": 0.027203446708090672,
+              "holm": 0.16322068024854403
+            },
+            {
+              "metric": "kindEntropy",
+              "p": 0.0005196042347745134,
+              "holm": 0.004156833878196107
+            },
+            {
+              "metric": "manipulationShare",
+              "p": 0.0015804628807724783,
+              "holm": 0.011063240165407348
+            },
+            {
+              "metric": "idleShare",
+              "p": 0.75392409448137,
+              "holm": 1
+            },
+            {
+              "metric": "freeSpireObjects",
+              "p": 1,
+              "holm": 1
+            },
+            {
+              "metric": "freeMaxStack",
+              "p": 1,
+              "holm": 1
+            },
+            {
+              "metric": "repeatedPursuit",
+              "p": 1,
+              "holm": 1
+            },
+            {
+              "metric": "taskScore",
+              "p": 1,
+              "holm": 1
+            }
+          ],
+          "taskCubes": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+          "taskRouteCounts": [0, 0, 0, 0, 8, 0, 0, 2, 0, 0],
+          "freeRouteCounts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          "maxTaskRoute": [0, 0, 0, 0, 1, 0, 0, 1, 0, 0],
+          "curiosity": [
+            {
+              "seed": 1,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 2,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 3,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 4,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 5,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 6,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 7,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 8,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 9,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            },
+            {
+              "seed": 10,
+              "freePositive": 180,
+              "taskPositive": 60,
+              "terms": ["curiosity:unknown", "curiosity:vary", "curiosity:progress"]
+            }
+          ],
+          "recordingHashes": [
+            {
+              "file": "hf4-no-planning-1.json",
+              "sha256": "da5686ae8214e16e40a9b998068795262cfb98e1db13768182dbe8f9583086a3"
+            },
+            {
+              "file": "hf4-no-planning-2.json",
+              "sha256": "d2b4499253943de29556809b23b9da8aa9b2bc21c079253a81df8e3e6a0f4808"
+            },
+            {
+              "file": "hf4-no-planning-3.json",
+              "sha256": "b83c6437acd0afd84c620dbd75ea49120bb00593eba0a8e189f38ce0502078b9"
+            },
+            {
+              "file": "hf4-no-planning-4.json",
+              "sha256": "182b18b8d3dad3d8c9ca0b879868d1d241e3b69a70cc2e245d41e64e11a46635"
+            },
+            {
+              "file": "hf4-no-planning-5.json",
+              "sha256": "9453898ec441ce415c0a70be1cdf3ab98b48c3111ecaece329ac1bbecc95b014"
+            },
+            {
+              "file": "hf4-no-planning-6.json",
+              "sha256": "ba63af46d8ea15613a280ce8ce426a89a4ee05b1c073da8bfd56d2d69a87ce99"
+            },
+            {
+              "file": "hf4-no-planning-7.json",
+              "sha256": "6fe71f42834718e2625ff4006175ee3514662154f2794d30f67d0bb56e20c4b6"
+            },
+            {
+              "file": "hf4-no-planning-8.json",
+              "sha256": "4be39cab3770c808516aa2ba54dc6b1d52a30940fc4c2b793e0f2083048b8585"
+            },
+            {
+              "file": "hf4-no-planning-9.json",
+              "sha256": "2ba4d24e9da998e1cf31ea436d8caf3b482c8420257556a664615e2c6785ac83"
+            },
+            {
+              "file": "hf4-no-planning-10.json",
+              "sha256": "aedfaf3b5633905794fa59dafd3d65c2ae70e3199c80b53369438b2980ae494c"
+            }
+          ]
+        }
+      ],
+      "changedActionSeeds": [8, 10],
+      "changedFreeActionSeeds": [8, 10]
+    }
+  ]
+}
