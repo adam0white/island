@@ -56,7 +56,17 @@ export function holmAdjust(pValues: number[]): number[] {
 }
 
 export async function compare(directory = 'viewer/runs'): Promise<string> {
-  const names = ['hf', 'random', 'hf2', 'hf2-no-boredom', 'hf2-no-memory', 'hf2-no-goals', 'hf3'];
+  const candidates = ['hf4', 'hf4-no-curiosity', 'hf4-no-planning'];
+  const names = [
+    'hf',
+    'random',
+    'hf2',
+    'hf2-no-boredom',
+    'hf2-no-memory',
+    'hf2-no-goals',
+    'hf3',
+    ...candidates,
+  ];
   const recordings: Recording[] = [];
   const samples = new Map<string, Record<string, number>[]>();
   for (const name of names) {
@@ -66,7 +76,7 @@ export async function compare(directory = 'viewer/runs'): Promise<string> {
       if (
         r.seed !== seed ||
         r.mind !== name ||
-        r.hf !== '2.9.0' ||
+        !(candidates.includes(name) ? ['2.11.0', '2.12.0'].includes(r.hf) : r.hf === '2.9.0') ||
         r.frames.length !== 240 ||
         r.config.freeEpisodes !== 3 ||
         r.config.stepsPerEpisode !== 60 ||
@@ -106,11 +116,12 @@ export async function compare(directory = 'viewer/runs'): Promise<string> {
       );
     });
   }
-  for (const arm of ['hf', 'hf2', 'hf2-no-memory', 'hf2-no-boredom', 'hf3'])
+  for (const arm of ['hf', 'hf2', 'hf2-no-memory', 'hf2-no-boredom', 'hf3', ...candidates])
     append(arm, 'random', [...metrics, ['taskScore', 'Task score']]);
-  for (const arm of ['hf2', 'hf2-no-memory', 'hf2-no-boredom', 'hf3'])
+  for (const arm of ['hf2', 'hf2-no-memory', 'hf2-no-boredom', 'hf3', ...candidates])
     append(arm, 'hf', [['taskScore', 'Task score']]);
   append('hf3', 'hf2', [['taskScore', 'Task score']]);
+  append('hf4', 'hf2', [['taskScore', 'Task score']]);
   for (const arm of ['hf2-no-boredom', 'hf2-no-memory', 'hf2-no-goals'])
     append('hf2', arm, [
       ['taskScore', 'Task score'],
@@ -136,6 +147,21 @@ export async function compare(directory = 'viewer/runs'): Promise<string> {
     rows.push(
       `| ${arm} | ${runs.map((r) => r.seed).join(', ')} | ${['freeSpireObjects', 'freeMaxStack', 'repeatedPursuit', 'taskScore'].map((key) => measures.map((m) => m[key]).join(', ')).join(' | ')} |`,
     );
+  }
+  rows.push(
+    '',
+    'Per-seed free-time metrics (one row per run; shares and entropy rounded to four decimals).',
+    '',
+    `| Arm | Seed | ${metrics.map(([, label]) => label).join(' | ')} |`,
+    '|---|---:|---:|---:|---:|---:|---:|---:|---:|',
+  );
+  for (const arm of arms) {
+    for (const run of recordings.filter((r) => r.mind === arm).sort((a, b) => a.seed - b.seed)) {
+      const measures = measureRecording(run);
+      rows.push(
+        `| ${arm} | ${run.seed} | ${metrics.map(([key]) => (measures[key] as number).toFixed(4)).join(' | ')} |`,
+      );
+    }
   }
   rows.push(
     '',

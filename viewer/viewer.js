@@ -58,6 +58,10 @@
 
   function validateRecording(recording) {
     const finite = (value) => typeof value === 'number' && Number.isFinite(value);
+    const record = (value) => value !== null && typeof value === 'object' && !Array.isArray(value);
+    const nonnegative = (value) => finite(value) && value >= 0;
+    const unit = (value) => nonnegative(value) && value <= 1;
+    const optionalString = (value) => value === undefined || typeof value === 'string';
     const natural = (value) => Number.isInteger(value) && value >= 0;
     const strings = (value) => Array.isArray(value) && value.every((item) => typeof item === 'string');
     const cell = (value) =>
@@ -66,7 +70,33 @@
       natural(value.y) &&
       value.x < recording.world?.size &&
       value.y < recording.world?.size;
-    const numbers = (value) => value && typeof value === 'object' && Object.values(value).every(finite);
+    const numbers = (value) => record(value) && Object.values(value).every(finite);
+    const route = (value) =>
+      record(value) &&
+      Array.isArray(value.steps) &&
+      value.steps.every(
+        (step) =>
+          record(step) &&
+          record(step.successor) &&
+          typeof step.successor.action === 'string' &&
+          optionalString(step.successor.targetId) &&
+          optionalString(step.successor.placeId) &&
+          nonnegative(step.successor.duration) &&
+          unit(step.successor.effort) &&
+          (step.successor.focus === undefined || unit(step.successor.focus)) &&
+          (step.successor.materialCost === undefined || nonnegative(step.successor.materialCost)) &&
+          nonnegative(step.start) &&
+          nonnegative(step.end) &&
+          step.end >= step.start &&
+          unit(step.access),
+      ) &&
+      numbers(value.goals);
+    const curiosityTerms = (value) =>
+      Array.isArray(value) &&
+      value.every(
+        (term) =>
+          record(term) && typeof term.source === 'string' && finite(term.value) && optionalString(term.ref),
+      );
     const goals = (value) =>
       Array.isArray(value) &&
       value.every(
@@ -81,10 +111,13 @@
           typeof goal.adopted === 'boolean',
       );
     const inner = (value) =>
-      value &&
-      typeof value === 'object' &&
-      !Array.isArray(value) &&
-      Object.entries(value).every(([key, item]) => (key === 'goals' ? goals(item) : finite(item)));
+      record(value) &&
+      Object.entries(value).every(([key, item]) => {
+        if (key === 'goals') return goals(item);
+        if (key === 'route') return route(item);
+        if (key === 'curiosityTerms') return curiosityTerms(item);
+        return finite(item);
+      });
     if (
       recording?.format !== 'island-recording@1' ||
       typeof recording.mind !== 'string' ||

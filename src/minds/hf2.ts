@@ -112,7 +112,7 @@ export class Hf2Mind implements Mind {
   private readonly memory: boolean;
   private readonly goals: boolean;
   private readonly boredom: boolean;
-  private here: Cell = { x: 0, y: 0 };
+  protected here: Cell = { x: 0, y: 0 };
   private pending: Offer | null = null;
   private taskId: string | undefined;
   private taskEpisode = -1;
@@ -299,7 +299,7 @@ export class Hf2Mind implements Mind {
 
   /** World semantics only: one legal trigger followed by one immediately reachable placement.
    * No task/goal input, route search, hidden terrain or forced attention. */
-  private consequencePercepts(obs: Observation): Percept[] {
+  protected consequencePercepts(obs: Observation): Percept[] {
     if (!this.consequences) return [];
     const p = this.person;
     const land = new Map<string, Cell>([[place(this.here), this.here]]);
@@ -513,9 +513,11 @@ export class Hf2Mind implements Mind {
     if (this.boredom && this.engagement < 0.35)
       feel(p, 'boredom', 0.65 * (1 - this.engagement / 0.35), 'island2:dull', p.now);
     const offers = this.offers(obs);
+    this.prepareOffers(obs, offers);
     const chosen = choose(p, scoreInputs(p, offers));
     const offer = offers.find((o) => o.id === chosen.affordanceId);
     if (!offer) throw new Error('HF2 selected a missing offer');
+    const readings = this.offerReading(offer, chosen);
     begin(p, offer, decide(p, [offer]));
     this.pending = offer;
     // finish will not add another minute: the action's minute is lived now, feedback arrives next call.
@@ -534,8 +536,14 @@ export class Hf2Mind implements Mind {
     return {
       action: offer.input,
       why: `${offer.label} ${chosen.terms.map((t) => `${t.source}=${t.value.toFixed(4)}`).join('; ')}`,
-      inner: { ...this.closingInner(), rememberedTargetMove: Number(offer.fromMemory) },
+      inner: { ...this.closingInner(), rememberedTargetMove: Number(offer.fromMemory), ...readings },
     };
+  }
+
+  protected prepareOffers(_obs: Observation, _offers: Offer[]): void {}
+
+  protected offerReading(_offer: Offer, _chosen: Considered): Inner {
+    return {};
   }
 
   closingInner(): Inner {

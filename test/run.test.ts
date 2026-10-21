@@ -8,7 +8,7 @@ import { type Mind, type Observation, PERSONA } from '../src/types.ts';
 import { apply, createWorld } from '../src/world.ts';
 
 async function scratchDirectory() {
-  const root = '/Users/abdul/code/human-framework/scratch/island2';
+  const root = '/Users/abdul/code/.lab-scratch/hf-play/island';
   await mkdir(root, { recursive: true });
   return mkdtemp(join(root, 'runner-test-'));
 }

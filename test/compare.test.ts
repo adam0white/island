@@ -52,7 +52,8 @@ describe('comparison report', () => {
       'Tallest stack',
       'Repeated pursuit',
     ];
-    for (const arm of ['hf', 'hf2', 'hf2-no-memory', 'hf2-no-boredom', 'hf3']) {
+    const candidates = ['hf4', 'hf4-no-curiosity', 'hf4-no-planning'];
+    for (const arm of ['hf', 'hf2', 'hf2-no-memory', 'hf2-no-boredom', 'hf3', ...candidates]) {
       const block = rows.filter(([comparison]) => comparison === `${arm} vs random`);
       expect(block.map((row) => row[1])).toEqual([...freeLabels, 'Task score']);
       const expected = holmAdjust(block.map((row) => Number(row[4])));
@@ -61,7 +62,7 @@ describe('comparison report', () => {
         expect(Number(row[5])).toBeCloseTo(expected[index] as number, 4);
       });
     }
-    for (const arm of ['hf2', 'hf2-no-memory', 'hf2-no-boredom', 'hf3']) {
+    for (const arm of ['hf2', 'hf2-no-memory', 'hf2-no-boredom', 'hf3', ...candidates]) {
       const block = rows.filter(([comparison]) => comparison === `${arm} vs hf`);
       expect(block).toHaveLength(1);
       expect(block[0]?.[1]).toBe('Task score');
@@ -76,10 +77,21 @@ describe('comparison report', () => {
       });
     }
     expect(rows.filter(([c]) => c === 'hf3 vs hf2').map((r) => r[1])).toEqual(['Task score']);
-    expect(rows).toHaveLength(51);
+    expect(rows.filter(([c]) => c === 'hf4 vs hf2').map((r) => r[1])).toEqual(['Task score']);
+    expect(rows).toHaveLength(79);
     expect(report).toContain('Per-seed values');
     expect(report).toContain('| hf-no-boredom |');
     expect(report).toContain('| Arm | move | jump | look | rest | pick | place | throw |');
+    expect(report).toContain(`| Arm | Seed | ${freeLabels.join(' | ')} |`);
+    for (const arm of candidates) {
+      expect(report).toContain(`| ${arm} | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 |`);
+      const freeRows = report
+        .split('Per-seed free-time metrics')[1]
+        ?.split('Free-time action-kind composition')[0]
+        ?.split('\n')
+        .filter((line) => line.startsWith(`| ${arm} | `));
+      expect(freeRows).toHaveLength(10);
+    }
     expect(report).toContain('one eight-test family per arm vs random');
     expect(report).toContain('one singleton family per task-score comparison vs hf or hf2');
     expect(report).toContain('one two-test family per hf2 ablation comparison');

@@ -1,3 +1,4 @@
+import type { PlanRoute, Term } from '@adam0white/human-framework';
 /**
  * The contract every part of the island shares. The world, the minds, the runner and the viewer meet here.
  *
@@ -81,7 +82,9 @@ export interface GoalReading {
   adopted: boolean;
 }
 export interface Inner {
-  [key: string]: number | GoalReading[] | undefined;
+  [key: string]: number | GoalReading[] | PlanRoute | Term[] | undefined;
+  route?: PlanRoute;
+  curiosityTerms?: Term[];
   boredom?: number;
   engagement?: number;
   rememberedTargetMove?: number;
@@ -98,6 +101,8 @@ export interface MindStep {
 }
 
 export interface Mind {
+  /** Runtime engine stamp for candidate arms; legacy recording stamps stay unchanged. */
+  readonly hfVersion?: string;
   name: string; // 'hf', 'hf-no-boredom', 'random', 'llm-workers-ai', 'llm-claude'
   /** Called once per step. May be async (LLM minds). */
   step(obs: Observation): MindStep | Promise<MindStep>;

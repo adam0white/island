@@ -3,17 +3,16 @@ import { describe, expect, it } from 'vitest';
 import type { Frame, Recording } from '../src/types.ts';
 import '../viewer/viewer.js';
 
-const { buildTimeline, frameAt, indexPaths, sparklinePoints, trailAt } = Reflect.get(
-  globalThis,
-  'IslandReplay',
-) as {
-  validateRecording: (run: Recording) => Recording;
-  buildTimeline: (runs: Recording[]) => { e: number; s: number }[];
-  frameAt: (run: Recording, point: { e: number; s: number }) => Frame | null;
-  trailAt: (run: Recording, point: { e: number; s: number }) => { x: number; y: number }[];
-  indexPaths: (value: unknown) => string[];
-  sparklinePoints: (values: (number | undefined)[], width: number, height: number) => string[];
-};
+const { buildTimeline, frameAt, indexPaths, sparklinePoints, trailAt, fixture, validateRecording } =
+  Reflect.get(globalThis, 'IslandReplay') as {
+    validateRecording: (run: Recording) => Recording;
+    fixture: (mind: string) => Recording;
+    buildTimeline: (runs: Recording[]) => { e: number; s: number }[];
+    frameAt: (run: Recording, point: { e: number; s: number }) => Frame | null;
+    trailAt: (run: Recording, point: { e: number; s: number }) => { x: number; y: number }[];
+    indexPaths: (value: unknown) => string[];
+    sparklinePoints: (values: (number | undefined)[], width: number, height: number) => string[];
+  };
 
 const frame = (e: number, s: number, x = 1): Frame => ({
   e,
@@ -50,6 +49,81 @@ describe('replay alignment', () => {
 });
 
 describe('recording loading and charts', () => {
+  const structuredInner = () => ({
+    boredom: 0.5,
+    route: {
+      steps: [
+        {
+          successor: {
+            action: 'place',
+            targetId: 'cube-1',
+            placeId: 'spire',
+            duration: 1.5,
+            effort: 0.2,
+            focus: 0.8,
+            materialCost: 0,
+          },
+          start: 2.5,
+          end: 4,
+          access: 0.9,
+        },
+      ],
+      goals: { build: 0.4 },
+    },
+    curiosityTerms: [{ source: 'curiosity:information', value: -0.25, ref: 'cube-1' }],
+  });
+
+  it('accepts structured HF4 route estimates and curiosity terms, including empty readouts', () => {
+    const recording = fixture('hf4');
+    const first = recording.frames[0] as Frame;
+    first.inner = structuredInner();
+    expect(validateRecording(recording)).toBe(recording);
+    first.inner = { route: { steps: [], goals: {} }, curiosityTerms: [] };
+    expect(validateRecording(recording)).toBe(recording);
+    const minimal = structuredInner();
+    Reflect.deleteProperty(minimal.route.steps[0]?.successor as object, 'focus');
+    Reflect.deleteProperty(minimal.route.steps[0]?.successor as object, 'materialCost');
+    Reflect.deleteProperty(minimal.curiosityTerms[0] as object, 'ref');
+    first.inner = minimal;
+    expect(validateRecording(recording)).toBe(recording);
+  });
+
+  it('rejects malformed nested HF4 routes and curiosity terms', () => {
+    const malformed: [string, unknown][] = [
+      ['route', null],
+      ['route.steps', {}],
+      ['route.steps.0', null],
+      ['route.steps.0.successor', []],
+      ['route.steps.0.successor.action', 3],
+      ['route.steps.0.successor.targetId', 3],
+      ['route.steps.0.successor.placeId', null],
+      ['route.steps.0.successor.duration', -1],
+      ['route.steps.0.successor.effort', 1.1],
+      ['route.steps.0.successor.focus', Number.NaN],
+      ['route.steps.0.successor.materialCost', -1],
+      ['route.steps.0.start', Number.POSITIVE_INFINITY],
+      ['route.steps.0.end', 1],
+      ['route.steps.0.access', -0.1],
+      ['route.goals', []],
+      ['route.goals.build', 'high'],
+      ['curiosityTerms', {}],
+      ['curiosityTerms.0', null],
+      ['curiosityTerms.0.source', 1],
+      ['curiosityTerms.0.value', Number.NaN],
+      ['curiosityTerms.0.ref', 1],
+    ];
+    for (const [path, value] of malformed) {
+      const recording = fixture('hf4');
+      const inner = structuredInner();
+      const keys = path.split('.');
+      const key = keys.pop() as string;
+      const parent = keys.reduce((object, part) => Reflect.get(object, part), inner as object);
+      Reflect.set(parent, key, value);
+      (recording.frames[0] as Frame).inner = inner;
+      expect(() => validateRecording(recording), path).toThrow('island-recording@1');
+    }
+  });
+
   it('accepts every generated recording, including structured HF2 goal audits', () => {
     const validate = Reflect.get(globalThis, 'IslandReplay').validateRecording;
     for (const file of readdirSync('viewer/runs').filter((f) => f.endsWith('.json') && f !== 'index.json')) {
