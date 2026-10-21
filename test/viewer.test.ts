@@ -49,6 +49,31 @@ describe('replay alignment', () => {
 });
 
 describe('recording loading and charts', () => {
+  it('validates HF5 project and pursuit audits', () => {
+    const recording = fixture('hf5');
+    const first = recording.frames[0] as Frame;
+    const project = {
+      goalId: 'g1',
+      prospectId: 'prospect:spire:cell:1,0',
+      placeId: 'cell:1,0',
+      progress: 0.2,
+      status: 'active' as const,
+    };
+    first.inner = {
+      activeProject: project,
+      projects: [project],
+      pursuit: { goalId: 'g1', since: 720, lastServedAt: 721, strength: 0.4 },
+      pursuitTerms: [{ source: 'pursuit:g1', value: 0.2 }],
+    };
+    expect(validateRecording(recording)).toBe(recording);
+    project.progress = 2;
+    expect(() => validateRecording(recording)).toThrow();
+    first.inner = { activeProject: null, projects: [], pursuit: null, pursuitTerms: [] };
+    expect(validateRecording(recording)).toBe(recording);
+    first.inner = { pursuit: { goalId: 'g1', since: 722, lastServedAt: 721, strength: 0.4 } };
+    expect(() => validateRecording(recording)).toThrow();
+  });
+
   const structuredInner = () => ({
     boredom: 0.5,
     route: {

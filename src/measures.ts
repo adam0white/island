@@ -170,5 +170,55 @@ export function measureRecording(recording: Recording, legacy = false): Record<s
     close(bout.at(-1)?.me);
   }
   measures.repeatedPursuit = pursuit;
+  // Preserve historical serialized measures for arms that never supplied project audits.
+  if (
+    !recording.mind.startsWith('hf5') &&
+    !free.some((frame) => frame.inner?.projects !== undefined || frame.inner?.activeProject !== undefined)
+  )
+    return measures;
+  // Project audits describe the selected action before begin/tick. Their place ids use the
+  // adapter's episode-local origin; world objects use absolute cells. Infer the origin from
+  // the first post-action position, undoing that action's movement when necessary.
+  const adoptedProjects = new Set<string>();
+  let placements = 0;
+  let completedChains = 0;
+  const delta: Record<string, { x: number; y: number }> = {
+    N: { x: 0, y: -1 },
+    S: { x: 0, y: 1 },
+    E: { x: 1, y: 0 },
+    W: { x: -1, y: 0 },
+  };
+  for (const frames of episodes.values()) {
+    const first = frames[0];
+    if (!first) continue;
+    const [verb, direction = ''] = first.action.split(' ');
+    const step = ['move', 'jump'].includes(verb ?? '') ? delta[direction] : undefined;
+    const origin = { x: first.me.x - (step?.x ?? 0), y: first.me.y - (step?.y ?? 0) };
+    let previous: Frame | undefined;
+    let picked: string | null = null;
+    for (const frame of frames) {
+      for (const project of frame.inner?.projects ?? []) adoptedProjects.add(project.goalId);
+      const [kind, payload] = frame.action.split(' ');
+      const carried = previous?.carrying;
+      const project = frame.inner?.activeProject;
+      const cell = project && /^cell:(-?\d+),(-?\d+)$/.exec(project.placeId);
+      if (kind === 'place' && carried && frame.carrying === null && cell) {
+        const x = origin.x + Number(cell[1]);
+        const y = origin.y + Number(cell[2]);
+        if (frame.objects.some((object) => object.id === carried && object.x === x && object.y === y)) {
+          placements++;
+          if (picked === carried) completedChains++;
+        }
+      }
+      if (kind === 'throw' || (picked && frame.carrying !== picked)) picked = null;
+      if (kind === 'pick' && payload && frame.carrying === payload && carried !== payload) picked = payload;
+      previous = frame;
+    }
+  }
+  // Free time only. A goal is counted once across resets. Replacing the same object counts
+  // again: these are placement events and pick -> place chains, not distinct retained objects.
+  measures.projectsAdopted = adoptedProjects.size;
+  measures.projectPlacements = placements;
+  measures.completedCarryChains = completedChains;
   return measures;
 }

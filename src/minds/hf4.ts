@@ -46,7 +46,7 @@ export class Hf4Mind extends Hf2Mind {
     return [];
   }
 
-  private known(obs: Observation): { id: string; cell: Cell }[] {
+  protected known(obs: Observation): { id: string; cell: Cell }[] {
     const out = obs.seen.things.map((t) => ({
       id: t.id,
       cell: { x: this.here.x + t.dx, y: this.here.y + t.dy },
@@ -109,7 +109,7 @@ export class Hf4Mind extends Hf2Mind {
         id: `chain-${String(claims.length).padStart(2, '0')}`,
         revision: now,
         trigger,
-        successor,
+        successor: this.projectSuccessor(successor),
         availableFrom: from,
         availableUntil: from + successor.duration + 1,
         expiresAt: from + successor.duration + 1,
@@ -201,6 +201,11 @@ export class Hf4Mind extends Hf2Mind {
     for (let i = 0; i < claims.length; i += 4)
       if (!seedConsequences(this.person, 'island', claims.slice(i, i + 4)))
         throw new Error('Island chain seed rejected');
+  }
+
+  /** Subclasses may attach endpoint semantics without changing the seeded generator. */
+  protected projectSuccessor(successor: ReceivedConsequence['successor']): ReceivedConsequence['successor'] {
+    return successor;
   }
 
   protected override offerReading(offer: Offer, chosen: Considered): Inner {

@@ -1,4 +1,4 @@
-import type { PlanRoute, Term } from '@adam0white/human-framework';
+import type { PlanRoute, Pursuit, Term } from '@adam0white/human-framework';
 /**
  * The contract every part of the island shares. The world, the minds, the runner and the viewer meet here.
  *
@@ -81,8 +81,28 @@ export interface GoalReading {
   proposed: boolean;
   adopted: boolean;
 }
+export interface ProjectReading {
+  goalId: string;
+  prospectId: string;
+  placeId: string;
+  progress: number;
+  status: 'active' | 'achieved' | 'abandoned';
+}
 export interface Inner {
-  [key: string]: number | GoalReading[] | PlanRoute | Term[] | undefined;
+  [key: string]:
+    | number
+    | GoalReading[]
+    | PlanRoute
+    | Term[]
+    | ProjectReading
+    | ProjectReading[]
+    | Pursuit
+    | null
+    | undefined;
+  activeProject?: ProjectReading | null;
+  projects?: ProjectReading[];
+  pursuit?: Pursuit | null;
+  pursuitTerms?: Term[];
   route?: PlanRoute;
   curiosityTerms?: Term[];
   boredom?: number;

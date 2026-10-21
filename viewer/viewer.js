@@ -110,11 +110,29 @@
           typeof goal.proposed === 'boolean' &&
           typeof goal.adopted === 'boolean',
       );
+    const project = (value) =>
+      record(value) &&
+      typeof value.goalId === 'string' &&
+      typeof value.prospectId === 'string' &&
+      typeof value.placeId === 'string' &&
+      unit(value.progress) &&
+      ['active', 'achieved', 'abandoned'].includes(value.status);
+    const pursuit = (value) =>
+      record(value) &&
+      typeof value.goalId === 'string' &&
+      finite(value.since) &&
+      finite(value.lastServedAt) &&
+      value.lastServedAt >= value.since &&
+      unit(value.strength);
     const inner = (value) =>
       record(value) &&
       Object.entries(value).every(([key, item]) => {
         if (key === 'goals') return goals(item);
         if (key === 'route') return route(item);
+        if (key === 'activeProject') return item === null || project(item);
+        if (key === 'projects') return Array.isArray(item) && item.every(project);
+        if (key === 'pursuit') return item === null || pursuit(item);
+        if (key === 'pursuitTerms') return curiosityTerms(item);
         if (key === 'curiosityTerms') return curiosityTerms(item);
         return finite(item);
       });

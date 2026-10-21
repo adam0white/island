@@ -24,12 +24,78 @@ function recording(frames: Frame[], freeEpisodes = 2): Recording {
 }
 
 describe('measureRecording', () => {
+  it('counts free projects once and translates project placements from the reset origin', () => {
+    const project = {
+      goalId: 'g1',
+      prospectId: 'p1',
+      placeId: 'cell:2,0',
+      progress: 0,
+      status: 'active' as const,
+    };
+    const inner = { projects: [project], activeProject: project };
+    const frames = [
+      frame('move E', { me: { x: 11, y: 10 }, inner }),
+      frame('pick cube-1', { me: { x: 11, y: 10 }, carrying: 'cube-1', inner }),
+      frame('move E', { me: { x: 12, y: 10 }, carrying: 'cube-1', inner }),
+      frame('place here', {
+        me: { x: 12, y: 10 },
+        objects: [{ id: 'cube-1', x: 12, y: 10, level: 0 }],
+        inner,
+      }),
+      frame('pick cube-1', { e: 1, me: { x: 10, y: 10 }, carrying: 'cube-1', inner }),
+      frame('place E', {
+        e: 1,
+        me: { x: 10, y: 10 },
+        objects: [{ id: 'cube-1', x: 12, y: 10, level: 0 }],
+        inner,
+      }),
+      frame('rest', { e: 2, inner: { projects: [{ ...project, goalId: 'task-project' }] } }),
+    ];
+    expect(measureRecording(recording(frames))).toMatchObject({
+      projectsAdopted: 1,
+      projectPlacements: 2,
+      completedCarryChains: 2,
+    });
+  });
+
+  it('rejects throws, losses, wrong destinations, missing active audits and cross-reset chains', () => {
+    const project = {
+      goalId: 'g1',
+      prospectId: 'p1',
+      placeId: 'cell:0,0',
+      progress: 0,
+      status: 'active' as const,
+    };
+    const pick = frame('pick cube-1', { carrying: 'cube-1', inner: { activeProject: project } });
+    const place = frame('place here', {
+      objects: [{ id: 'cube-1', x: 1, y: 1, level: 0 }],
+      inner: { activeProject: project },
+    });
+    const cases = [
+      [pick, frame('throw cube-1 E hard', { ...place, action: 'throw cube-1 E hard' })],
+      [pick, frame('rest'), place],
+      [pick, { ...place, objects: [{ id: 'cube-1', x: 2, y: 1, level: 0 }] }],
+      [pick, { ...place, inner: undefined }],
+      [pick, { ...place, e: 1 }],
+    ];
+    for (const frames of cases)
+      expect(measureRecording(recording(frames))).toMatchObject({
+        projectPlacements: 0,
+        completedCarryChains: 0,
+      });
+    expect(measureRecording(recording([pick, place, pick, place]))).toMatchObject({
+      projectPlacements: 2,
+      completedCarryChains: 2,
+    });
+  });
+
   it('preserves every legacy field value in all recorded arms', () => {
     for (const file of readdirSync('viewer/runs').filter(
       (f) => f.endsWith('.json') && f !== 'index.json' && !f.startsWith('hf2'),
     )) {
       const run = JSON.parse(readFileSync(`viewer/runs/${file}`, 'utf8'));
       expect(measureRecording(run), file).toMatchObject(run.measures);
+      expect(measureRecording(run), file).not.toHaveProperty('projectsAdopted');
     }
   });
 

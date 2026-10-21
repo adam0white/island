@@ -1,5 +1,8 @@
+import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { compare, exactPermutation, holmAdjust, median } from '../src/compare.ts';
+import { compare, compareHF5, exactPermutation, HF5_ARMS, holmAdjust, median } from '../src/compare.ts';
+import type { Recording } from '../src/types.ts';
 
 describe('exact two-sided permutation of mean difference', () => {
   it('includes observed allocation, opposite allocation and ties', () => {
@@ -32,6 +35,65 @@ describe('Holm adjustment', () => {
 });
 
 describe('comparison report', () => {
+  it('keeps HF5 project metrics descriptive and HF5 versus HF4 in one two-test family', async () => {
+    const scratch = '/Users/abdul/code/.lab-scratch/hf-projects/island';
+    await mkdir(scratch, { recursive: true });
+    const directory = await mkdtemp(resolve(scratch, 'compare5-test-'));
+    try {
+      for (const arm of HF5_ARMS)
+        for (let seed = 1; seed <= 10; seed++) {
+          const run: Recording = {
+            format: 'island-recording@1',
+            mind: arm,
+            seed,
+            hf: arm === 'random' ? '2.9.0' : '2.13.0',
+            world: { size: 5, height: [], spire: { x: 3, y: 3 } },
+            config: { freeEpisodes: 3, stepsPerEpisode: 60, taskSteps: 60, task: 'Build.' },
+            frames: Array.from({ length: 240 }, (_, i) => ({
+              e: Math.floor(i / 60),
+              s: i % 60,
+              action: 'rest',
+              me: { x: 1, y: 1 },
+              carrying: null,
+              objects: [],
+              events: [],
+            })),
+            notes: [],
+            selfReports: [],
+            measures: {},
+            cost: { calls: 0, inputTokens: 0, outputTokens: 0, usd: 0 },
+          };
+          await writeFile(resolve(directory, `${arm}-${seed}.json`), JSON.stringify(run));
+        }
+      const report = await compareHF5(directory);
+      const rows =
+        report
+          .split('Per-seed values')[0]
+          ?.split('\n')
+          .filter((line) => line.startsWith('| hf')) ?? [];
+      expect(rows).toHaveLength(34);
+      for (const arm of HF5_ARMS.filter((arm) => arm !== 'random'))
+        expect(rows.filter((line) => line.startsWith(`| ${arm} vs random |`))).toHaveLength(8);
+      expect(
+        rows.filter((line) => line.startsWith('| hf5 vs hf4 |')).map((line) => line.split('|')[2]?.trim()),
+      ).toEqual(['Spire objects', 'Task score']);
+      expect(
+        rows.every(
+          (line) =>
+            !line.includes('Projects adopted') &&
+            !line.includes('Project placements') &&
+            !line.includes('Completed carry chains'),
+        ),
+      ).toBe(true);
+      expect(report).toContain('Project metrics are descriptive only');
+      expect(report).toContain(
+        '| Arm | Seed | Free Spire objects | Projects adopted | Project placements | Completed carry chains | Task cubes |',
+      );
+    } finally {
+      await rm(directory, { recursive: true, force: true });
+    }
+  });
+
   it('covers all requested blocks and adjusts each random comparison as one eight-test family', async () => {
     const report = await compare();
     const rows = (report.split('\n\nPer-seed')[0] ?? '')

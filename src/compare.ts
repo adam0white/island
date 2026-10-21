@@ -56,6 +56,7 @@ export function holmAdjust(pValues: number[]): number[] {
 }
 
 export async function compare(directory = 'viewer/runs'): Promise<string> {
+  if ((await readdir(directory)).includes('hf5-1.json')) return compareHF5(directory);
   const candidates = ['hf4', 'hf4-no-curiosity', 'hf4-no-planning'];
   const names = [
     'hf',
@@ -180,6 +181,101 @@ export async function compare(directory = 'viewer/runs'): Promise<string> {
   }
   return rows.join('\n');
 }
+
+export const HF5_ARMS = ['hf5', 'hf5-no-projects', 'hf5-no-persistence', 'random', 'hf4'] as const;
+export const FREE_METRICS: [string, string][] = [
+  ['cellsVisited', 'Cells visited'],
+  ['kindEntropy', 'Kind entropy'],
+  ['manipulationShare', 'Manipulation share'],
+  ['idleShare', 'Idle share'],
+  ['freeSpireObjects', 'Spire objects'],
+  ['freeMaxStack', 'Tallest stack'],
+  ['repeatedPursuit', 'Repeated pursuit'],
+];
+const PROJECT_METRICS: [string, string][] = [
+  ['projectsAdopted', 'Projects adopted'],
+  ['projectPlacements', 'Project placements'],
+  ['completedCarryChains', 'Completed carry chains'],
+];
+
+/** Same-runtime HF5 comparison set; no historical files are substituted for missing controls. */
+export async function compareHF5(directory = 'viewer/runs/hf5-candidate'): Promise<string> {
+  const samples = new Map<string, Record<string, number>[]>();
+  let runtime: string | undefined;
+  for (const arm of HF5_ARMS) {
+    const observations = [];
+    for (let seed = 1; seed <= 10; seed++) {
+      const run = JSON.parse(await readFile(resolve(directory, `${arm}-${seed}.json`), 'utf8')) as Recording;
+      if (
+        run.mind !== arm ||
+        run.seed !== seed ||
+        run.frames.length !== 240 ||
+        run.config.freeEpisodes !== 3 ||
+        run.config.stepsPerEpisode !== 60 ||
+        run.config.taskSteps !== 60
+      )
+        throw new Error(`Unexpected run ${arm}-${seed}`);
+      if (arm !== 'random') {
+        runtime ??= run.hf;
+        if (run.hf !== runtime) throw new Error(`Mixed runtime versions in ${arm}-${seed}`);
+      }
+      observations.push(measureRecording(run));
+    }
+    samples.set(arm, observations);
+  }
+  const rows = [
+    `HF5 comparison set; HF runtime stamp ${runtime}. Random retains its legacy recording stamp.`,
+    'Exact unpaired permutation tests of absolute mean differences, including ties. Medians describe samples. Holm correction uses one eight-test family per arm vs random (seven free-time metrics plus task score), and one two-test family for hf5 vs hf4 (free Spire objects plus task score). Project metrics are descriptive only and do not enlarge these families. Families are exploratory and are not jointly corrected; large p values do not establish equivalence.',
+    '',
+    '| Comparison | Measure | Median A | Median B | Exact p | Holm p |',
+    '|---|---|---:|---:|---:|---:|',
+  ];
+  const values = (arm: string, key: string) =>
+    (samples.get(arm) ?? []).map(
+      (m) => m[key] ?? (PROJECT_METRICS.some(([field]) => field === key) ? 0 : Number.NaN),
+    );
+  const append = (a: string, b: string, fields: [string, string][]) => {
+    const raw = fields.map(([key]) => exactPermutation(values(a, key), values(b, key)));
+    const adjusted = holmAdjust(raw);
+    fields.forEach(([key, label], i) => {
+      rows.push(
+        `| ${a} vs ${b} | ${label} | ${median(values(a, key)).toFixed(4)} | ${median(values(b, key)).toFixed(4)} | ${raw[i]?.toFixed(6)} | ${adjusted[i]?.toFixed(6)} |`,
+      );
+    });
+  };
+  for (const arm of HF5_ARMS.filter((arm) => arm !== 'random'))
+    append(arm, 'random', [...FREE_METRICS, ['taskScore', 'Task score']]);
+  append('hf5', 'hf4', [
+    ['freeSpireObjects', 'Spire objects'],
+    ['taskScore', 'Task score'],
+  ]);
+  const fields: [string, string][] = [
+    ['freeSpireObjects', 'Free Spire objects'],
+    ...PROJECT_METRICS,
+    ['taskScore', 'Task cubes'],
+  ];
+  rows.push(
+    '',
+    'Per-seed values. All project measures use free time only. Project placements require a successful place at the pre-action active project destination. Completed carry chains require pick then place of the same object within one episode without an intervening throw or loss. No movement minimum; replacing the same object counts again.',
+    '',
+    `| Arm | Seed | ${fields.map(([, label]) => label).join(' | ')} |`,
+    '|---|---:|---:|---:|---:|---:|---:|',
+  );
+  for (const arm of HF5_ARMS)
+    for (let seed = 1; seed <= 10; seed++)
+      rows.push(`| ${arm} | ${seed} | ${fields.map(([key]) => values(arm, key)[seed - 1]).join(' | ')} |`);
+  const medians: [string, string][] = [...FREE_METRICS, ...PROJECT_METRICS, ['taskScore', 'Task cubes']];
+  rows.push(
+    '',
+    'Medians (project metrics descriptive only).',
+    '',
+    `| Arm | ${medians.map(([, label]) => label).join(' | ')} |`,
+    `|---|${medians.map(() => '---:|').join('')}`,
+  );
+  for (const arm of HF5_ARMS)
+    rows.push(`| ${arm} | ${medians.map(([key]) => median(values(arm, key)).toFixed(4)).join(' | ')} |`);
+  return rows.join('\n');
+}
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  console.log(await compare());
+  console.log(await compare(process.argv[2]));
 }
