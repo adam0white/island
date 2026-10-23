@@ -75,7 +75,7 @@ export async function runIsland(
   }
   const cost = (mind as Mind & { cost?: () => Recording['cost'] }).cost?.();
   if (cost) recording.cost = { ...cost };
-  recording.measures = measureRecording(recording, !/^hf[2345]/.test(mind.name));
+  recording.measures = measureRecording(recording, !/^hf[23456]/.test(mind.name));
   return recording;
 }
 

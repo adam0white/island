@@ -495,18 +495,7 @@ export class Hf2Mind implements Mind {
     const p = this.person;
     if (obs.task && this.taskEpisode !== obs.episode) {
       const spire = obs.seen.spire ? add(this.here, { x: obs.seen.spire.dx, y: obs.seen.spire.dy }) : null;
-      const goal = adoptGoal(
-        p,
-        {
-          label: obs.task,
-          serves: ['competence'],
-          importance: 0.5,
-          deadline: p.now + obs.stepsLeft,
-          ...(this.consequences ? { temporal: { halfLifeMinutes: 60 } } : {}),
-          advancedBy: this.goals && spire ? [{ action: 'island:place:cube@Spire', amount: 0.1 }] : [],
-        },
-        p.now,
-      );
+      const goal = this.adoptTask(obs, spire);
       this.taskId = goal.id;
       this.taskEpisode = obs.episode;
     }
@@ -538,6 +527,23 @@ export class Hf2Mind implements Mind {
       why: `${offer.label} ${chosen.terms.map((t) => `${t.source}=${t.value.toFixed(4)}`).join('; ')}`,
       inner: { ...this.closingInner(), rememberedTargetMove: Number(offer.fromMemory), ...readings },
     };
+  }
+
+  /** Subclasses may explicitly bind a host task to an existing project. */
+  protected adoptTask(obs: Observation, spire: Cell | null) {
+    const p = this.person;
+    return adoptGoal(
+      p,
+      {
+        label: obs.task,
+        serves: ['competence'],
+        importance: 0.5,
+        deadline: p.now + obs.stepsLeft,
+        ...(this.consequences ? { temporal: { halfLifeMinutes: 60 } } : {}),
+        advancedBy: this.goals && spire ? [{ action: 'island:place:cube@Spire', amount: 0.1 }] : [],
+      },
+      p.now,
+    );
   }
 
   protected prepareOffers(_obs: Observation, _offers: Offer[]): void {}
